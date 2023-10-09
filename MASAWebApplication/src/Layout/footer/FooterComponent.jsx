@@ -19,7 +19,7 @@ const Item = styled(Paper)(({ theme }) => ({
     border: "0"
 }));
 
-function FooterComponent() {
+function Footer() {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -57,4 +57,4 @@ function FooterComponent() {
     );
 }
 
-export default FooterComponent;
+export default Footer;
