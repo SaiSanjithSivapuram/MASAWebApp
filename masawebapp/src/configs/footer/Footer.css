@@ -1,0 +1,32 @@
+.footer-content {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.footerIcon {
+    border: none;
+    background-color: transparent;
+    color: #001529 !important;
+}
+
+.footerIcon:hover.insta-icon {
+    background-color: rgba(255, 0, 255, 0.25) !important;
+    color: #FF00FF !important;
+}
+
+.footerIcon:hover.mail-icon {
+    background-color: rgba(0, 191, 255, 0.25) !important;
+    color: #00BFFF !important;
+}
+
+.footerIcon:hover.linkedin-icon {
+    background-color: rgba(65, 105, 225, 0.25) !important;
+    color: #4169E1 !important;
+}
+
+.footerIcon:hover.whatsapp-icon {
+    background-color: rgba(50, 205, 50, 0.25) !important;
+    color: #32CD32 !important;
+}
