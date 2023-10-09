@@ -10,12 +10,12 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import CloseIcon from '@mui/icons-material/Close';
-import Slide from '@mui/material/Slide';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeDialog } from './store/layoutSlice';
+import Grow from '@mui/material/Grow';
 
 const Transition = forwardRef(function Transition(props, ref) {
-  return <Slide direction="right" ref={ref} {...props} />;
+  return <Grow ref={ref} {...props} />;
 });
 
 function MenuDialog() {
