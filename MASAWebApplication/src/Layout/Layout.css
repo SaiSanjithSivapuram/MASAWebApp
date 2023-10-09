@@ -1,3 +1,9 @@
 .content {
     min-height: 100vh;
 }
+
+.customnavbar {
+    box-shadow: none !important;
+    display: flex;
+    justify-items: center;
+}

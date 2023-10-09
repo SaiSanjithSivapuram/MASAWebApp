@@ -23,7 +23,7 @@ function Footer() {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={1} justifyContent="center">
+            <Grid container spacing={0} justifyContent="center">
                 <Grid xs={1}>
                     <Item className='gridItem'>
                         <IconButton className='footerIcon facebook-icon'>

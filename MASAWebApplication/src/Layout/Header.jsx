@@ -16,7 +16,7 @@ function Header() {
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+        <AppBar position="fixed" color='transparent' className='customnavbar'>
           <Toolbar>
             <IconButton
               size="large"
@@ -30,11 +30,8 @@ function Header() {
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 9 }}>
             </Typography>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Countdown for Rocket 00 : 00 : 00
-            </Typography>
             <Button color="inherit">
-            <img src='icons/masalogo.png' width={100} />
+              <img src='icons/masalogo.png' width={100} />
             </Button>
           </Toolbar>
         </AppBar>
