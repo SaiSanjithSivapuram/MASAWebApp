@@ -23,29 +23,29 @@ function Footer() {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={1}>
-                <Grid xs={3}>
+            <Grid container spacing={1} justifyContent="center">
+                <Grid xs={1}>
                     <Item className='gridItem'>
                         <IconButton className='footerIcon facebook-icon'>
                             <FacebookIcon />
                         </IconButton>
                     </Item>
                 </Grid>
-                <Grid xs={3}>
+                <Grid xs={1}>
                     <Item className='gridItem'>
                         <IconButton className='footerIcon linkedin-icon'>
                             <LinkedInIcon />
                         </IconButton>
                     </Item>
                 </Grid>
-                <Grid xs={3}>
+                <Grid xs={1}>
                     <Item className='gridItem'>
                         <IconButton className='footerIcon youtube-icon'>
                             <YouTubeIcon />
                         </IconButton>
                     </Item>
                 </Grid>
-                <Grid xs={3}>
+                <Grid xs={1}>
                     <Item className='gridItem'>
                         <IconButton className='footerIcon instagram-icon'>
                             <InstagramIcon />
