@@ -24,9 +24,8 @@ export default function QuiltedImageList() {
             alignitems:"stretch"}}
         >
         {itemData.map((item) => (
-
             <Grid item xs={item.xs}>
-                <Card sx={{ maxWidth: 280 }}>
+                <Card sx={{ maxWidth: 380 }}>
                     <CardActionArea>
                         <CardMedia
                         component="img"
@@ -41,7 +40,6 @@ export default function QuiltedImageList() {
                                 </Typography>
                             : <div height='0' width='0'></div>
                         }
-
                         {item.text
                             ?  <Typography variant="body2" color="text.secondary">
                                     Lizards are a widespread group of squamate reptiles, with over 6,000
@@ -53,7 +51,6 @@ export default function QuiltedImageList() {
                     </CardActionArea>
                 </Card>
             </Grid>
-
         ))}
         </Grid>
     </div>
@@ -67,7 +64,7 @@ const itemData = [
       title: 'Breakfast',
       text: `Lizards are a widespread group of squamate reptiles, with over 6,000
       species, ranging across all continents except Antarctica`,
-      xs: 2
+      xs: 3
     },
     {
       img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
@@ -78,7 +75,7 @@ const itemData = [
       title: 'Camera',
       text: `Lizards are a widespread group of squamate reptiles, with over 6,000
       species, ranging across all continents except Antarctica`,
-      xs: 4
+      xs: 3
     },
     {
       img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',

@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Card, CardActionArea, CardContent, CardMedia, Grid, Icon, Typography } from '@mui/material'
 import CorporateFareIcon from '@mui/icons-material/CorporateFare';
 import DescriptionIcon from '@mui/icons-material/Description';
+import SocialMedia from '../../Layout/social_media/social_media';
 import "./Home.css"
 
 function HomePage() {
@@ -154,6 +155,7 @@ function HomePage() {
           </Grid>
         </Card>
       </div>
+      <SocialMedia />
     </div>
   )
 }
