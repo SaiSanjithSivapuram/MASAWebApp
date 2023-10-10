@@ -4,6 +4,7 @@ import { RouterProvider } from "react-router-dom";
 import routeConfig from '../configs/routes/routeConfig';
 import "./Layout.css"
 import Footer from './footer/FooterComponent';
+import SocialMedia from './social_media/social_media';
 
 function Layout() {
 
@@ -16,6 +17,7 @@ function Layout() {
           fallbackElement={<></>}
         />
       </div>
+      <SocialMedia />
       <Footer />
     </div>
   )
