@@ -52,8 +52,8 @@ function Footer() {
                         </IconButton>
                     </Item>
                 </Grid>
-        </Grid>
-        </Box >
+            </Grid>
+        </Box>
     );
 }
 

@@ -9,7 +9,7 @@
 }
 
 .main-icon-grid {
-    margin-top: 30vh;    
+    margin-top: 30vh;
 }
 
 .main-title {
@@ -41,4 +41,24 @@
 
 .sponsers-card:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.core-team-content {
+    padding: 10px !important;
+    background: white;
+    box-shadow: none;
+}
+
+.core-team-bg {
+    padding: 40px 0px;
+    background: #032e63 !important; 
+    margin: 0px 18px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
+}
+
+.core-team-card:hover {
+    background: linear-gradient(66deg, rgba(3,46,99,1) 40%, rgba(255,207,6,1) 40%);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: white;
+    transition: ease-in 0.2s;
 }
