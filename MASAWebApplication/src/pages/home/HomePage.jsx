@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Card, CardActionArea, CardContent, CardMedia, Grid, Icon, Typography } from '@mui/material'
 import CorporateFareIcon from '@mui/icons-material/CorporateFare';
 import DescriptionIcon from '@mui/icons-material/Description';
-import SocialMedia from '../../Layout/social_media/social_media';
+import SocialMedia from '../../component/social_media/social_media';
 import "./Home.css"
 
 function HomePage() {
@@ -155,7 +155,17 @@ function HomePage() {
           </Grid>
         </Card>
       </div>
-      <SocialMedia />
+      <div className='social-media'>
+        <Grid container spacing={0} justifyContent="center">
+          <Grid xs={12} display="flex" justifyContent="center">
+            <Typography variant='h4'>OUR SOCIAL</Typography>
+          </Grid>
+        </Grid>
+        <br />
+        <Grid container spacing={0} justifyContent="center">
+          <SocialMedia />
+        </Grid>
+      </div>
     </div>
   )
 }
