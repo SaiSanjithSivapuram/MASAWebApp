@@ -155,15 +155,18 @@ function HomePage() {
           </Grid>
         </Card>
       </div>
-      <div className='social-media'>
+      <div className='social-media-content'>
         <Grid container spacing={0} justifyContent="center">
           <Grid xs={12} display="flex" justifyContent="center">
             <Typography variant='h4'>OUR SOCIAL</Typography>
           </Grid>
         </Grid>
-        <br />
         <Grid container spacing={0} justifyContent="center">
-          <SocialMedia />
+          {/* <Grid xs={12} display="flex" justifyContent="center"> */}
+            {/* <Card className='social-media-card' sx={{ width: "95vw" }}> */}
+              <SocialMedia />
+            {/* </Card> */}
+          {/* </Grid> */}
         </Grid>
       </div>
     </div>

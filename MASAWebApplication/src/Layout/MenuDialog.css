@@ -1,0 +1,45 @@
+.menu-header {
+    box-shadow: none !important;
+}
+
+.menu-close-button {
+    border-radius: 50%;
+    padding: 16px;
+}
+
+.menu-close-button:hover {
+    color: #032E63;
+    background-color: #6D92B5 !important;
+    transform: rotate(360deg);
+    transition: ease-in 0.5s;
+}
+
+.menu-logo {
+    background-color: #6D92B5;
+    padding: 12px 16px;
+    border-radius: 20px;
+}
+
+.menu-button {
+    color: #032e63 !important;
+    padding: 12px 16px !important;
+    border-radius: 20px !important;
+}
+
+.menu-button:hover {
+    color: #ffcf08 !important;
+    background-color: #032E63 !important;
+    transition: linear 0.2s;
+}
+
+.menu-header, .menu-content {
+    background-color: #032E63 !important;
+}
+
+.menu-cards {
+    background-color: #6D92B5;
+    margin-top: 30px;
+    padding: 12px 0px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

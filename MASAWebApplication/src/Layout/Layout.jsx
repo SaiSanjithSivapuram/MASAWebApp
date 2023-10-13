@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from './Header'
-import { RouterProvider } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import routeConfig from '../configs/routes/routeConfig';
 import "./Layout.css"
 import Footer from './footer/FooterComponent';
@@ -9,14 +9,23 @@ function Layout() {
 
   return (
     <div>
-      <Header />
-      <div className='content'>
-        <RouterProvider
-          router={routeConfig}
-          fallbackElement={<></>}
-        />
-      </div>
-      <Footer />
+      <BrowserRouter>
+        <Header />
+        <div className='content'>
+          <Routes>
+            {routeConfig.map((route, index) => (
+              <Route key={index} path={route.path}
+                element={
+                  <React.Suspense>
+                    {route.element}
+                  </React.Suspense>
+                } />
+            )
+            )}
+          </Routes>
+        </div>
+        <Footer />
+      </BrowserRouter>
     </div>
   )
 }

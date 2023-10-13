@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import HomePage from "../../pages/home/HomePage";
 import AboutPage from "../../pages/about/AboutPage";
 
-const routeConfig = createBrowserRouter([
+const routeConfig = [
     {
         path: "/",
         element: <HomePage />
@@ -11,6 +11,6 @@ const routeConfig = createBrowserRouter([
         path: "/about",
         element: <AboutPage />
     }
-])
+]
 
 export default routeConfig;
