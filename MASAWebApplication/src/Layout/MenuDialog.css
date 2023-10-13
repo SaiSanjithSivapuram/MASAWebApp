@@ -32,7 +32,8 @@
     transition: linear 0.2s;
 }
 
-.menu-header, .menu-content {
+.menu-header,
+.menu-content {
     background-color: #032E63 !important;
 }
 
