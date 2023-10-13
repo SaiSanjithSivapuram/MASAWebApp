@@ -34,7 +34,7 @@ function MenuDialog() {
       >
         <AppBar sx={{ position: 'relative' }} className='menu-header'>
           <Grid container spacing={0} alignItems="center" style={{ marginTop: "20px", marginBottom: "20px" }}>
-            <Grid xs={2} display="flex" justifyContent="center">
+            <Grid xs={3} sm={2} lg={1} display="flex" justifyContent="center">
               <IconButton
                 edge="start"
                 color="inherit"
@@ -45,7 +45,7 @@ function MenuDialog() {
                 <CloseIcon />
               </IconButton>
             </Grid>
-            <Grid xs={8} display="flex" justifyContent="center">
+            <Grid xs={6} sm={8} lg={10} display="flex" justifyContent="center">
               <img src='icons/masalogo.png' width={100} className='menu-logo' />
             </Grid>
           </Grid>

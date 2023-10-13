@@ -15,7 +15,7 @@ function Header() {
   const [scrollThreshold, setScrollThreshold] = useState(false)
 
   const changeNavbarColor = () => {
-    if (window.scrollY >= 721) {
+    if (window.scrollY >= 100) {
       setScrollThreshold(true);
     }
     else {
