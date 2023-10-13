@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -12,11 +12,22 @@ import MenuDialog from './MenuDialog';
 
 function Header() {
   const dispatch = useDispatch()
+  const [scrollThreshold, setScrollThreshold] = useState(false)
+
+  const changeNavbarColor = () => {
+    if (window.scrollY >= 721) {
+      setScrollThreshold(true);
+    }
+    else {
+      setScrollThreshold(false);
+    }
+  };
+  window.addEventListener('scroll', changeNavbarColor);
 
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="fixed" color='transparent' className='customnavbar'>
+        <AppBar position="fixed" color={scrollThreshold ? 'default' : 'transparent'} className='customnavbar'>
           <Toolbar>
             <IconButton
               size="large"
