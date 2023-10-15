@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from 'react'
+import React, { forwardRef, useEffect, useState } from 'react'
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import AppBar from '@mui/material/AppBar';
@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { closeDialog } from './store/layoutSlice';
 import Grow from '@mui/material/Grow';
 import { DialogContent, Divider, Grid } from '@mui/material';
-import { useNavigate } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 import "./MenuDialog.css"
 import { navigationConfig } from '../configs/navigation/navigationConfig';
 
@@ -20,10 +20,11 @@ const Transition = forwardRef(function Transition(props, ref) {
 function MenuDialog() {
   const dispatch = useDispatch();
   const navigate = useNavigate()
+  const location = useLocation()
   const dialogtoggle = useSelector(state => state.layout.dialog.open)
 
   const menuCategories = ['Overview', 'About MASA-Dearborn', 'Our Projects', 'Media']
-
+  
   return (
     <div>
       <Dialog
@@ -65,7 +66,7 @@ function MenuDialog() {
                 <Grid container spacing={0} alignItems="center">
                   {navigationConfig[category].map((menuItem, index) =>
                     <Grid key={index} xs={12} lg={menuItem.size} display="flex" justifyContent="center" style={{ marginTop: "15px" }}>
-                      <Button className='menu-button' startIcon={menuItem.icon}
+                      <Button className={location.pathname === menuItem.url ? 'menu-button-active' : 'menu-button'} startIcon={menuItem.icon}
                         onClick={() => {
                           navigate(menuItem.url)
                           dispatch(closeDialog())
