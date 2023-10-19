@@ -12,6 +12,7 @@ import { DialogContent, Divider, Grid } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router';
 import "./MenuDialog.css"
 import { navigationConfig } from '../configs/navigation/navigationConfig';
+import { motion } from "framer-motion";
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Grow ref={ref} {...props} />;
@@ -24,6 +25,24 @@ function MenuDialog() {
   const dialogtoggle = useSelector(state => state.layout.dialog.open)
 
   const menuCategories = ['Overview', 'About MASA-Dearborn', 'Our Projects', 'Media']
+
+  const variants = {
+    open: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        y: { stiffness: 1000, velocity: -1 }
+      }
+    },
+    closed: {
+      y: 50,
+      opacity: 0,
+      transition: {
+        y: { stiffness: 1000 }
+      }
+    }
+  };
+
   
   return (
     <div>
@@ -66,14 +85,21 @@ function MenuDialog() {
                 <Grid container spacing={0} alignItems="center">
                   {navigationConfig[category].map((menuItem, index) =>
                     <Grid key={index} xs={12} lg={menuItem.size} display="flex" justifyContent="center" style={{ marginTop: "15px" }}>
-                      <Button className={location.pathname === menuItem.url ? 'menu-button-active' : 'menu-button'} startIcon={menuItem.icon}
-                        onClick={() => {
-                          navigate(menuItem.url)
-                          dispatch(closeDialog())
-                        }}>
-                        {menuItem.name}
-                      </Button>
-                    </Grid>
+                        <motion.li
+                            style={{listStyleType: "none"}}
+                            variants={variants}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            <Button className={location.pathname === menuItem.url ? 'menu-button-active' : 'menu-button'} startIcon={menuItem.icon}
+                              onClick={() => {
+                                navigate(menuItem.url)
+                                dispatch(closeDialog())
+                              }}>
+                              {menuItem.name}
+                            </Button>
+                        </motion.li>
+                  </Grid>
                   )}
                 </Grid>
               </div>)

@@ -1,6 +1,5 @@
-.social-media {
-    display: flex;
-    justify-content: right;
-    align-items: right;
-    
-}
+.imageList {
+    flex-wrap: 'nowrap';
+    transform: 'translateZ(0)';
+    scrollbar-width: 'none';
+  }
