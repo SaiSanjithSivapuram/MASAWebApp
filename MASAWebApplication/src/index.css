@@ -1,9 +1,9 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', sans-serif !important;
   line-height: 1.5;
   font-weight: 400;
   color: #032E63;
-  background-color: #FFFFFF;
+  background-color: #E5E8E8;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

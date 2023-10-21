@@ -2,28 +2,66 @@
     box-shadow: none !important;
 }
 
+.footer-bg {
+    background-color: #032e63;
+    padding: 20px 0px;
+    border-radius: 20px 20px 0px 0px !important;
+}
+
 .footerIcon {
     border: none;
-    background-color: transparent;
-    color: #001529 !important;
+    background-color: transparent !important;
+    color: white !important;
+    transition: 0.1s linear !important;
 }
 
 .footerIcon:hover.instagram-icon {
-    background-color: rgba(255, 0, 255, 0.25) !important;
     color: #FF00FF !important;
 }
 
 .footerIcon:hover.facebook-icon {
-    background-color: rgba(26, 119, 242, 0.25) !important;
     color: #1A77F2 !important;
 }
 
 .footerIcon:hover.linkedin-icon {
-    background-color: rgba(65, 105, 225, 0.25) !important;
     color: #4169E1 !important;
 }
 
 .footerIcon:hover.youtube-icon {
-    background-color: rgba(255, 0, 0, 0.25) !important;
     color: #FF0000 !important;
+}
+
+.footer-title {
+    font-family: 'Poppins', sans-serif !important;
+    color: white !important;
+    font-weight: bolder !important;
+}
+
+.footer-btn > .footer-title {
+    font-family: 'Poppins', sans-serif !important;
+    color: #032e63 !important;
+    font-weight: bolder !important;
+}
+
+.footer-btn {
+    margin: 12px !important;
+    padding: 12px 26px !important;
+    color: #032e63 !important;
+    border-color: transparent !important;
+    border-radius: 20px !important;
+    box-shadow: 0px 10px 20px 5px rgba(0,0,0,0.20) !important;
+    background-color: white !important;
+    background-image: linear-gradient(90deg, transparent 0%, transparent 50%, #FFCF06 50%, #FFFC06 100%) !important;
+    background-size: 201% !important;
+    transition: background-position .1s cubic-bezier(.47, .1, 1, .63),color .2s linear !important;
+    /* transition-delay: 0.0s, 0.15s !important; */
+}
+
+.footer-btn:hover {
+    color: #032e63 !important;
+    background-position: -99.5% 100% !important;
+}
+
+.footer-btn:hover > .footer-title {
+    color: #032e63 !important;
 }

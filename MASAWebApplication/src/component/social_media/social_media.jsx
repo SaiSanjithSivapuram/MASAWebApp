@@ -18,7 +18,7 @@ function srcset(image, size, rows = 1, cols = 1) {
 export default function TitlebarImageList() {
   return (
     <ImageList 
-    sx={{ width: 900, height: "100vh" }} 
+    sx={{ width: "92vw", borderRadius: "20px", boxShadow: "0px 10px 20px 5px rgba(0,0,0,0.20)" }} 
     variant="quilted"
     cols={4}
     rowHeight={"100%"}>

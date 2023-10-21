@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -9,46 +9,62 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { useDispatch } from 'react-redux';
 import { openDialog } from './store/layoutSlice';
 import MenuDialog from './MenuDialog';
+import { AnimatePresence, motion, transform, useMotionValueEvent, useScroll } from 'framer-motion';
+import { Grid } from '@mui/material';
+import "./Header.css";
 
 function Header() {
   const dispatch = useDispatch()
-  const [scrollThreshold, setScrollThreshold] = useState(false)
+  const [scrollThreshold] = useState(false)
+  const { scrollY } = useScroll()
+  const [toggle, setToggle] = useState(false)
 
-  const changeNavbarColor = () => {
-    if (window.scrollY >= 100) {
-      setScrollThreshold(true);
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest > 50) {
+      setToggle(true)
     }
-    else {
-      setScrollThreshold(false);
+    else if (latest <= 50) {
+      setToggle(false)
     }
-  };
-  window.addEventListener('scroll', changeNavbarColor);
+  })
+
+  // useEffect(() => {
+  //   console.log(toggle)
+  // }, [toggle])
 
   return (
-    <>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="fixed" color={scrollThreshold ? 'default' : 'transparent'} className='customnavbar'>
-          <Toolbar>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              onClick={() => dispatch(openDialog())}
-              sx={{ mr: 2 }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 9 }}>
-            </Typography>
-            <Button color="inherit">
-              <img src='icons/masalogo.png' width={100} />
-            </Button>
-          </Toolbar>
-        </AppBar>
-      </Box>
+    <AnimatePresence>
+      <motion.div
+        style={{ position: "fixed", zIndex: "1", width: "100%", height: "50px" }}
+        className='customnavbar'
+        initial={{ backgroundColor: "transparent", opacity: 0 }}
+        animate={toggle ? { backgroundColor: "white", borderRadius: "0px 0px 20px 20px" ,opacity: 1 } : { backgroundColor: "transparent", borderRadius: "0px" ,opacity: 0 }}
+        transition={{ duration: 0.2, type: "spring", repeatType: "Infinity" }}
+      />
+      <AppBar position="fixed" color={scrollThreshold ? 'default' : 'transparent'} className='customnavbar' style={{ borderRadius: "0px 0px 1px 1px solid transparent" }}>
+        <Toolbar>
+          <Grid container spacing={1} justifyContent="center">
+            <Grid xs={1} display="flex" justifyContent="flex-start">
+              <IconButton
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                className='navMenuLogoBtn'
+                onClick={() => dispatch(openDialog())}
+              >
+                <MenuIcon/>
+              </IconButton>
+            </Grid>
+            <Grid xs={11} display="flex" justifyContent="flex-end">
+              <Button color="inherit" className='navBrandLogo'>
+                <img src='icons/masalogo.png' width={150} />
+              </Button>
+            </Grid>
+          </Grid>
+        </Toolbar>
+      </AppBar>
       <MenuDialog />
-    </>
+    </AnimatePresence>
   );
 }
 export default Header;
