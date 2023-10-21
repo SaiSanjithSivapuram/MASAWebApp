@@ -4,8 +4,8 @@
 
 .footer-bg {
     background-color: #032e63;
-    padding: 20px 0px;
-    border-radius: 20px 20px 0px 0px !important;
+    padding: 12px 0px;
+    /* border-radius: 40px 40px 0px 0px !important; */
 }
 
 .footerIcon {
@@ -37,7 +37,7 @@
     font-weight: bolder !important;
 }
 
-.footer-btn > .footer-title {
+.footer-btn>.footer-title {
     font-family: 'Poppins', sans-serif !important;
     color: #032e63 !important;
     font-weight: bolder !important;
@@ -49,11 +49,11 @@
     color: #032e63 !important;
     border-color: transparent !important;
     border-radius: 20px !important;
-    box-shadow: 0px 10px 20px 5px rgba(0,0,0,0.20) !important;
+    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.20) !important;
     background-color: white !important;
     background-image: linear-gradient(90deg, transparent 0%, transparent 50%, #FFCF06 50%, #FFFC06 100%) !important;
     background-size: 201% !important;
-    transition: background-position .1s cubic-bezier(.47, .1, 1, .63),color .2s linear !important;
+    transition: background-position .1s cubic-bezier(.47, .1, 1, .63), color .2s linear !important;
     /* transition-delay: 0.0s, 0.15s !important; */
 }
 
@@ -62,6 +62,6 @@
     background-position: -99.5% 100% !important;
 }
 
-.footer-btn:hover > .footer-title {
+.footer-btn:hover>.footer-title {
     color: #032e63 !important;
 }

@@ -52,7 +52,7 @@ function Footer() {
                             whileInView="visible"
                             viewport={{ once: true }}
                         >
-                            <FacebookIcon />
+                            <FacebookIcon fontSize='large' />
                         </IconButton>
                     </Grid>
                     <Grid xs={4} display="flex" justifyContent="center">
@@ -63,7 +63,7 @@ function Footer() {
                             whileInView="visible"
                             viewport={{ once: true }}
                         >
-                            <LinkedInIcon />
+                            <LinkedInIcon fontSize='large' />
                         </IconButton>
                     </Grid>
                     <Grid xs={4} display="flex" justifyContent="center">
@@ -74,7 +74,7 @@ function Footer() {
                             whileInView="visible"
                             viewport={{ once: true }}
                         >
-                            <YouTubeIcon />
+                            <YouTubeIcon fontSize='large' />
                         </IconButton>
                     </Grid>
                     <Grid xs={4} display="flex" justifyContent="center">
@@ -85,7 +85,7 @@ function Footer() {
                             whileInView="visible"
                             viewport={{ once: true }}
                         >
-                            <InstagramIcon />
+                            <InstagramIcon fontSize='large' />
                         </IconButton>
                     </Grid>
                 </Grid>
@@ -109,7 +109,7 @@ function Footer() {
                                 variants={slideLeftAnimation}
                                 initial="hidden"
                                 whileInView="visible"
-                                whileHover={{ scale: 1.02 }}
+                                whileHover={{ scale: 1.15 }}
                                 viewport={{ once: true }}
                             >
                                 <Typography variant='p' className='footer-title'

@@ -94,7 +94,7 @@ function HomePage() {
             </Grid>
             <Grid container spacing={0} justifyContent="center">
               <Grid xs={12} display="flex" justifyContent="center">
-                <Typography sx={{ typography: { md: 'h3', xs: 'h5' } }} color="white" className='main-title'>REACHING FOR THE STARS...</Typography>
+                <Typography sx={{ typography: { md: 'h2', xs: 'h5' } }} color="white" className='main-title'>REACHING FOR THE STARS...</Typography>
               </Grid>
             </Grid>
             <Grid container spacing={0} justifyContent="center">
@@ -106,7 +106,7 @@ function HomePage() {
                   variant='outlined'
                   component={motion.div}
                   whileHover={{
-                    scale: 1.02,
+                    scale: 1.15,
                     transition: { duration: 0.3 },
                   }}
                   whileTap={{ scale: 0.9 }}
