@@ -41,7 +41,7 @@ function Header() {
         animate={toggle ? { backgroundColor: "white", borderRadius: "0px 0px 40px 40px" ,opacity: 1 } : { backgroundColor: "transparent", borderRadius: "0px" ,opacity: 0 }}
         transition={{ duration: 0.2, type: "spring", repeatType: "Infinity" }}
       />
-      <AppBar position="fixed" color={scrollThreshold ? 'default' : 'transparent'} className='customnavbar' style={{ borderRadius: "0px 0px 1px 1px solid transparent" }}>
+      <AppBar position="fixed" color={scrollThreshold ? 'default' : 'transparent'} className='customnavbar'>
         <Toolbar>
           <Grid container spacing={1} justifyContent="center">
             <Grid xs={1} display="flex" justifyContent="flex-start">
