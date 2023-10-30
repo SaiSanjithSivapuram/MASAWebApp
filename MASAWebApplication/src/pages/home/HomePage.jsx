@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { Button, Card, CardActionArea, CardContent, CardMedia, Grid, Icon, Typography } from '@mui/material'
+import { Button, Card, CardActionArea, CardContent, CardHeader, CardMedia, Grid, Icon, Typography } from '@mui/material'
 import CorporateFareIcon from '@mui/icons-material/CorporateFare';
 import DescriptionIcon from '@mui/icons-material/Description';
 import SocialMedia from '../../component/social_media/social_media';
 import { AnimatePresence, motion } from 'framer-motion';
 import MemoryIcon from '@mui/icons-material/Memory';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 import "./Home.css"
 
 function HomePage() {
@@ -128,27 +129,43 @@ function HomePage() {
       <div>
         <Grid container spacing={0} justifyContent="center">
           <Grid xs={12} lg={6} display="flex" justifyContent={{ xs: "center", lg: "flex-end" }}>
-            <Typography sx={{ typography: { md: 'h3', xs: 'h5' } }} className='intro-title title1'
+            <Typography sx={{ typography: { md: 'h4', xs: 'h6' } }} className='intro-title title2'
               component={motion.div}
               variants={slideLeftAnimation}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
             >
-              MICHIGAN AERONAUTICAL</Typography>
+              MICHIGAN</Typography>
+            <Typography sx={{ typography: { md: 'h4', xs: 'h6' } }} className='intro-title title1'
+              component={motion.div}
+              variants={slideLeftAnimation}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              AERONAUTICAL</Typography>
           </Grid>
           <Grid xs={12} lg={5} display="flex" justifyContent={{ xs: "center", lg: "flex-start" }}>
-            <Typography sx={{ typography: { md: 'h3', xs: 'h5' } }} className='intro-title title2'
+            <Typography sx={{ typography: { md: 'h4', xs: 'h6' } }} className='intro-title title1'
               component={motion.div}
               variants={slideLeftAnimation}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
             >
-              SPACE ASSOCIATION</Typography>
+              SCIENCE</Typography>
+            <Typography sx={{ typography: { md: 'h4', xs: 'h6' } }} className='intro-title title2'
+              component={motion.div}
+              variants={slideLeftAnimation}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              ASSOCIATION</Typography>
           </Grid>
           <Grid xs={11} display="flex" justifyContent="center">
-            <Typography variant='h6' className='intro-description'
+            <Typography sx={{ typography: { md: 'p', xs: 'p' } }} className='intro-description'
               component={motion.div}
               variants={slideRightAnimation}
               initial="hidden"
@@ -158,9 +175,38 @@ function HomePage() {
               Welcome to the official website of the Michigan Aeronautical Science Association-Dearborn.
               MASA-Dearborn is a rocketry team at the University of Michigan-Dearborn made up of engineering, science, arts, and business students who work together to build an innovative high powered rocket. The group was founded in 2015 with the goal of being an avenue for students to learn about rocketry and apply their theoretical knowledge to a real life technical project. Each year the group competes at the Spaceport America Cup in Las Cruces, New Mexico where they attempt to launch a rocket to 30,000ft. We implore you to browse through our website to learn about MASA-Dearborn and experimental rocketry.</Typography>
           </Grid>
+          <Grid xs={12} display="flex" justifyContent="center">
+            <Button
+              edge="start"
+              className='page-btn'
+              startIcon={<YouTubeIcon />}
+              variant='outlined'
+              component={motion.div}
+              variants={slideLeftAnimation}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              whileHover={{
+                scale: 1.15,
+                transition: { duration: 0.3 },
+              }}
+              whileTap={{ scale: 0.9 }}
+              href='https://youtu.be/XFDlKn3lNmc?si=UL_sxb5gt2ckBhJo'
+              target='blank'
+            >
+              <Typography variant='p' className='header-title'
+                component={motion.div}
+                variants={slideLeftAnimation}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                Watch Our Feature Video</Typography>
+            </Button>
+          </Grid>
         </Grid>
       </div>
-      <div className='feature-video-content'>
+      {/* <div className='feature-video-content'>
         <Grid container spacing={0} justifyContent="center">
           <Grid xs={12} display="flex" justifyContent="center">
             <Typography sx={{ typography: { md: 'h3', xs: 'h5' } }} className='intro-title title1'
@@ -186,16 +232,16 @@ function HomePage() {
             </Grid>
           </motion.div>
         </Grid>
-      </div>
+      </div> */}
       <div className='sponsers-content'>
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <Grid container spacing={0} justifyContent="flex-start">
+          {/* <Grid container spacing={0} justifyContent="flex-start">
             <Grid xs={12} display="flex" justifyContent="center">
-              <Typography sx={{ typography: { md: 'h3', xs: 'h5' } }} className='intro-title'
+              <Typography sx={{ typography: { md: 'h4', xs: 'h6' } }} className='intro-title'
                 component={motion.div}
                 variants={slideLeftAnimation}
                 initial="hidden"
@@ -204,34 +250,57 @@ function HomePage() {
               >
                 OUR SPONSERS</Typography>
             </Grid>
-          </Grid>
-          <br />
-          <Grid container spacing={0} justifyContent="center">
-            <Grid xs={11} display="flex" justifyContent="center">
-              <Card className='sponsers-card' sx={{ padding: "20px 0px" }}
+          </Grid> */}
+          {/* <br /> */}
+          <Grid container spacing={0} justifyContent="space-around">
+            <Grid xs={5} display="flex" justifyContent="center">
+              <Card className='sponsers-card' sx={{ padding: "20px 0px", margin: "20px auto" }}
                 component={motion.div}
                 whileHover={{ scale: 1.02 }}
               >
-                <Grid container spacing={0} justifyContent="center">
-                  <Grid xs={12} lg={4} display="flex" justifyContent="center">
-                    <img src='ford.png' width={"50%"} style={{ paddingTop: "50px" }} />
+                <CardHeader title={
+                  <Grid container spacing={0} justifyContent="flex-start">
+                    <Grid xs={12} display="flex" justifyContent="center">
+                      <Typography sx={{ typography: { xs: 'h6' } }} className='card-title'
+                        component={motion.div}
+                        variants={slideLeftAnimation}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                      >
+                        OUR SPONSERS</Typography>
+                    </Grid>
                   </Grid>
-                  <Grid xs={12} lg={4} display="flex" justifyContent="center">
-                    <img src='umichcecs.png' width={"50%"} style={{ paddingTop: "50px" }} />
+                } />
+                <CardContent>
+                  <Grid container spacing={0} justifyContent="center" alignItems="center">
+                    <Grid xs={12} lg={4} display="flex" justifyContent="center">
+                      <img src='ford.png' width={"40%"} height={"90%"} />
+                    </Grid>
+                    <Grid xs={12} lg={4} display="flex" justifyContent="center">
+                      <img src='umichcecs.png' width={"40%"} height={"90%"} />
+                    </Grid>
+                    <Grid xs={12} lg={4} display="flex" justifyContent="center">
+                      <img src='bssolidworks.png' width={"60%"} height={"65%"} />
+                    </Grid>
+                    <Grid xs={12} lg={4} display="flex" justifyContent="center">
+                      <img src='patriot-tool.png' width={"45%"} height={"100%"} style={{ paddingTop: "10px" }} />
+                    </Grid>
+                    <Grid xs={12} lg={4} display="flex" justifyContent="center">
+                      <img src='hugnes.png' width={"60%"} height={"60%"} style={{ paddingTop: "10px" }} />
+                    </Grid>
+                    <Grid xs={12} lg={4} display="flex" justifyContent="center">
+                      <img src='ansys.png' width={"40%"} height={"60%"} style={{ paddingTop: "10px" }} />
+                    </Grid>
                   </Grid>
-                  <Grid xs={12} lg={4} display="flex" justifyContent="center">
-                    <img src='bssolidworks.png' width={"70%"} height={80} style={{ paddingTop: "50px" }} />
-                  </Grid>
-                  <Grid xs={12} lg={4} display="flex" justifyContent="center">
-                    <img src='patriot-tool.png' width={"50%"} style={{ paddingTop: "50px" }} />
-                  </Grid>
-                  <Grid xs={12} lg={4} display="flex" justifyContent="center">
-                    <img src='hugnes.png' width={"70%"} height={90} style={{ paddingTop: "50px" }} />
-                  </Grid>
-                  <Grid xs={12} lg={4} display="flex" justifyContent="center">
-                    <img src='ansys.png' width={"60%"} height={80} style={{ paddingTop: "50px" }} />
-                  </Grid>
-                </Grid>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid xs={5} display="flex" justifyContent="center">
+              <Card className='sponsers-card' sx={{ padding: "20px 0px", margin: "20px auto" }}
+                component={motion.div}
+                whileHover={{ scale: 1.02 }}
+              >
               </Card>
             </Grid>
           </Grid>

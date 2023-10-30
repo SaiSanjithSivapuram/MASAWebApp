@@ -24,19 +24,25 @@
 
 .intro-title {
     margin: 20px 7px !important;
-    font-weight: bolder !important;
 }
 
 .title1 {
     color: #032e63 !important;
+    font-weight: bolder !important;
+}
+
+.card-title {
+    color: #032e63 !important;
+    font-weight: 900 !important;
 }
 
 .title2 {
     color: #FFCF06 !important;
+    font-weight: bolder !important;
 }
 
 .intro-description {
-    margin: 20px !important;
+    margin: 0px auto 10px auto !important;
 }
 
 .launch-btn {
@@ -55,6 +61,26 @@
     color: #032e63 !important;
     border-color: transparent !important;
     background-position: -99.5% 100% !important;
+}
+
+.page-btn {
+    margin: 12px !important;
+    padding: 12px 26px !important;
+    color: #032e63 !important;
+    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.20) !important;
+    height: fit-content !important;
+    border-color: transparent !important;
+    border-radius: 30px !important;
+    background-image: linear-gradient(90deg, white 0%, white 50%, #FFCF06 50%, #FFFC06 100%) !important;
+    background-size: 201% !important;
+    transition: background-position .1s cubic-bezier(.47, .1, 1, .63),color .2s linear !important;
+    /* transition-delay: 0.0s, 0.15s !important; */
+}
+
+.page-btn:hover {
+    color: #032e63 !important;
+    border-color: transparent !important;
+    background-position: -99.1% 100% !important;
 }
 
 .header-title {
@@ -91,7 +117,7 @@
 }
 
 .sponsers-content {
-    margin: 30px auto;
+    margin: 0px auto 15px auto;
 }
 
 .sponsers-card {
