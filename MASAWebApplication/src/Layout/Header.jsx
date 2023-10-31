@@ -12,25 +12,37 @@ import MenuDialog from './MenuDialog';
 import { AnimatePresence, motion, transform, useMotionValueEvent, useScroll } from 'framer-motion';
 import { Grid } from '@mui/material';
 import "./Header.css";
+import { useLocation } from 'react-router';
 
 function Header() {
   const dispatch = useDispatch()
   const [scrollThreshold] = useState(false)
   const { scrollY } = useScroll()
   const [toggle, setToggle] = useState(false)
+  const location = useLocation();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > 50) {
-      setToggle(true)
+    if (location.pathname == '/') {
+      if (latest > 50) {
+        setToggle(true)
+      }
+      else if (latest <= 50) {
+        setToggle(false)
+      }
     }
-    else if (latest <= 50) {
-      setToggle(false)
+    else {
+      setToggle(true)
     }
   })
 
-  // useEffect(() => {
-  //   console.log(toggle)
-  // }, [toggle])
+  useEffect(() => {
+    if (location.pathname == "/") {
+      setToggle(false)
+    }
+    else {
+      setToggle(true)
+    }
+  }, [location.pathname])
 
   return (
     <AnimatePresence>
@@ -38,7 +50,7 @@ function Header() {
         style={{ position: "fixed", zIndex: "1", width: "100%", height: "50px" }}
         className='customnavbar'
         initial={{ backgroundColor: "transparent", opacity: 0 }}
-        animate={toggle ? { backgroundColor: "white", borderRadius: "0px 0px 40px 40px" ,opacity: 1 } : { backgroundColor: "transparent", borderRadius: "0px" ,opacity: 0 }}
+        animate={toggle ? { backgroundColor: "white", borderRadius: "0px 0px 40px 40px", opacity: 1 } : { backgroundColor: "transparent", borderRadius: "0px", opacity: 0 }}
         transition={{ duration: 0.2, type: "spring", repeatType: "Infinity" }}
       />
       <AppBar position="fixed" color={scrollThreshold ? 'default' : 'transparent'} className='customnavbar'>
@@ -52,7 +64,7 @@ function Header() {
                 className='navMenuLogoBtn'
                 onClick={() => dispatch(openDialog())}
               >
-                <MenuIcon/>
+                <MenuIcon />
               </IconButton>
             </Grid>
             <Grid xs={11} display="flex" justifyContent="flex-end">

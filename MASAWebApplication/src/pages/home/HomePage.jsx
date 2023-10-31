@@ -172,7 +172,7 @@ function HomePage() {
 
   return (
     <div>
-      <div className='main-img'>
+      <div className='main-img' style={{ backgroundImage: "linear-gradient(rgba(3, 46, 99, 0.4), rgba(3, 46, 99, 0.4)), url('RocketImage.jpeg')" }}>
         <AnimatePresence>
           <motion.div
             initial={{ opacity: 0 }}

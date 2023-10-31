@@ -1,0 +1,21 @@
+.card-title {
+    color: #032e63 !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.card-icon {
+    color: #032e63 !important;
+    width: 70% !important;
+    height: 80% !important;
+}
+
+.team-card {
+    border-radius: 20px !important;
+}
+
+.team-image {
+    border: 1px solid transparent;
+    border-radius: 20px;
+    width: 90%;
+    height: 90%;
+} 

@@ -46,44 +46,52 @@ function Footer() {
                 <Grid xs={12} lg={6} display="flex" justifyContent="space-around">
                     <Grid xs={4} display="flex" justifyContent="center">
                         <IconButton className='footerIcon facebook-icon'
-                            component={motion.div}
+                            component={motion.a}
                             variants={slideRightAnimation}
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
+                            href='https://www.facebook.com/masadearborn'
+                            target='blank'
                         >
                             <FacebookIcon fontSize='large' />
                         </IconButton>
                     </Grid>
                     <Grid xs={4} display="flex" justifyContent="center">
                         <IconButton className='footerIcon linkedin-icon'
-                            component={motion.div}
+                            component={motion.a}
                             variants={slideRightAnimation}
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
+                            href='https://www.linkedin.com/company/masa-dearborn/about/'
+                            target='blank'
                         >
                             <LinkedInIcon fontSize='large' />
                         </IconButton>
                     </Grid>
                     <Grid xs={4} display="flex" justifyContent="center">
                         <IconButton className='footerIcon youtube-icon'
-                            component={motion.div}
+                            component={motion.a}
                             variants={slideRightAnimation}
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
+                            href='https://www.youtube.com/channel/UC1Xt-zJLpBNlFr07eB0KGww'
+                            target='blank'
                         >
                             <YouTubeIcon fontSize='large' />
                         </IconButton>
                     </Grid>
                     <Grid xs={4} display="flex" justifyContent="center">
                         <IconButton className='footerIcon instagram-icon'
-                            component={motion.div}
+                            component={motion.a}
                             variants={slideRightAnimation}
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
+                            href='https://www.instagram.com/masadearborn/'
+                            target='blank'
                         >
                             <InstagramIcon fontSize='large' />
                         </IconButton>
@@ -105,12 +113,13 @@ function Footer() {
                     <Grid container spacing={0} display="flex" justifyContent="center">
                         <Grid xs={12} display="flex" justifyContent="center">
                             <Button className='footer-btn' variant='outlined' startIcon={<SendIcon />}
-                                component={motion.div}
+                                component={motion.a}
                                 variants={slideLeftAnimation}
                                 initial="hidden"
                                 whileInView="visible"
                                 whileHover={{ scale: 1.15 }}
                                 viewport={{ once: true }}
+                                href='mailto:masadearborn@umich.edu'
                             >
                                 <Typography variant='p' className='footer-title'
                                     component={motion.div}

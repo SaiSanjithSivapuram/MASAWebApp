@@ -17,6 +17,9 @@ function Layout() {
               <Route key={index} path={route.path}
                 element={
                   <React.Suspense>
+                    {route.path != "/" && (
+                      <div style={{ height: "100px" }}/>
+                    )}
                     {route.element}
                   </React.Suspense>
                 } />

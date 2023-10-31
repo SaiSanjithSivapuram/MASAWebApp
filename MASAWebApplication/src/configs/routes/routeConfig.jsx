@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomePage from "../../pages/home/HomePage";
 import AboutPage from "../../pages/about/AboutPage";
+import LeadershipTeamPage from "../../pages/about/LeaderShipTeamPage";
 
 const routeConfig = [
     {
@@ -8,8 +9,12 @@ const routeConfig = [
         element: <HomePage />
     },
     {
-        path: "/about",
-        element: <AboutPage />
+        path: "/aboutus",
+        element: <AboutPage />,
+    },
+    {
+        path: "/leadershipTeam",
+        element: <LeadershipTeamPage />
     }
 ]
 
