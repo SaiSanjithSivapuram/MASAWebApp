@@ -6,6 +6,7 @@ import SocialMedia from '../../component/social_media/social_media';
 import { AnimatePresence, motion } from 'framer-motion';
 import MemoryIcon from '@mui/icons-material/Memory';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import Countdown from 'react-countdown';
 import "./Home.css"
 
 function HomePage() {
@@ -78,6 +79,96 @@ function HomePage() {
       }
     }
   }
+
+  const timerRender = ({ days, hours, minutes, seconds, completed }) => {
+    if (completed) {
+      return 'Rocket Is Live';
+    } else {
+      return (
+        <Grid container spacing={0} justifyContent="space-around">
+          <Grid xs={3} display="flex" justifyContent="center">
+            <Typography sx={{ typography: { xs: 'h4' } }} className='card-time-title'
+              component={motion.div}
+              variants={slideLeftAnimation}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              {days} </Typography>
+          </Grid>
+          <Grid xs={3} display="flex" justifyContent="center">
+            <Typography sx={{ typography: { xs: 'h4' } }} className='card-time-title'
+              component={motion.div}
+              variants={slideLeftAnimation}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              {hours} </Typography>
+          </Grid>
+          <Grid xs={3} display="flex" justifyContent="center">
+            <Typography sx={{ typography: { xs: 'h4' } }} className='card-time-title'
+              component={motion.div}
+              variants={slideLeftAnimation}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              {minutes} </Typography>
+          </Grid>
+          <Grid xs={3} display="flex" justifyContent="center">
+            <Typography sx={{ typography: { xs: 'h4' } }} className='card-time-title'
+              component={motion.div}
+              variants={slideLeftAnimation}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              {seconds} </Typography>
+          </Grid>
+          <Grid xs={3} display="flex" justifyContent="center">
+            <Typography sx={{ typography: { xs: 'h6' } }} className='card-time-title'
+              component={motion.div}
+              variants={slideLeftAnimation}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              days </Typography>
+          </Grid>
+          <Grid xs={3} display="flex" justifyContent="center">
+            <Typography sx={{ typography: { xs: 'h6' } }} className='card-title'
+              component={motion.div}
+              variants={slideLeftAnimation}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              hours </Typography>
+          </Grid>
+          <Grid xs={3} display="flex" justifyContent="center">
+            <Typography sx={{ typography: { xs: 'h6' } }} className='card-title'
+              component={motion.div}
+              variants={slideLeftAnimation}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              minutes </Typography>
+          </Grid>
+          <Grid xs={3} display="flex" justifyContent="center">
+            <Typography sx={{ typography: { xs: 'h6' } }} className='card-title'
+              component={motion.div}
+              variants={slideLeftAnimation}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              seconds </Typography>
+          </Grid>
+        </Grid>);
+    }
+  };
 
   return (
     <div>
@@ -181,7 +272,7 @@ function HomePage() {
               className='page-btn'
               startIcon={<YouTubeIcon />}
               variant='outlined'
-              component={motion.div}
+              component={motion.a}
               variants={slideLeftAnimation}
               initial="hidden"
               whileInView="visible"
@@ -206,55 +297,15 @@ function HomePage() {
           </Grid>
         </Grid>
       </div>
-      {/* <div className='feature-video-content'>
-        <Grid container spacing={0} justifyContent="center">
-          <Grid xs={12} display="flex" justifyContent="center">
-            <Typography sx={{ typography: { md: 'h3', xs: 'h5' } }} className='intro-title title1'
-              component={motion.div}
-              variants={slideLeftAnimation}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              FEATURED VIDEO</Typography>
-          </Grid>
-        </Grid>
-        <Grid container spacing={0} justifyContent="center">
-          <motion.div className='video-bg'
-            variants={slideRightAnimation}
-            initial="hidden"
-            whileInView="visible"
-            whileHover={{ scale: 1.02 }}
-            viewport={{ once: true }}
-          >
-            <Grid xs={12} display="flex" justifyContent="center">
-              <iframe src="https://www.youtube.com/embed/M5QY2_8704o" loading='lazy' title="Chillstep Music for Programming / Cyber / Coding" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className='feature-video'></iframe>
-            </Grid>
-          </motion.div>
-        </Grid>
-      </div> */}
       <div className='sponsers-content'>
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          {/* <Grid container spacing={0} justifyContent="flex-start">
-            <Grid xs={12} display="flex" justifyContent="center">
-              <Typography sx={{ typography: { md: 'h4', xs: 'h6' } }} className='intro-title'
-                component={motion.div}
-                variants={slideLeftAnimation}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-              >
-                OUR SPONSERS</Typography>
-            </Grid>
-          </Grid> */}
-          {/* <br /> */}
           <Grid container spacing={0} justifyContent="space-around">
-            <Grid xs={5} display="flex" justifyContent="center">
-              <Card className='sponsers-card' sx={{ padding: "20px 0px", margin: "20px auto" }}
+            <Grid xs={12} lg={5} display="flex" justifyContent="flex-end">
+              <Card className='sponsers-card' sx={{ padding: "20px 0px", margin: "20px auto", width: "100%" }}
                 component={motion.div}
                 whileHover={{ scale: 1.02 }}
               >
@@ -296,11 +347,32 @@ function HomePage() {
                 </CardContent>
               </Card>
             </Grid>
-            <Grid xs={5} display="flex" justifyContent="center">
-              <Card className='sponsers-card' sx={{ padding: "20px 0px", margin: "20px auto" }}
+            <Grid xs={12} lg={5} display="flex" justifyContent="flex-start">
+              <Card className='sponsers-card' sx={{ padding: "20px 0px", margin: "20px auto", width: "100%" }}
                 component={motion.div}
                 whileHover={{ scale: 1.02 }}
               >
+                <CardHeader title={
+                  <Grid container spacing={0} justifyContent="flex-start">
+                    <Grid xs={12} display="flex" justifyContent="center">
+                      <Typography sx={{ typography: { xs: 'h6' } }} className='card-title'
+                        component={motion.div}
+                        variants={slideLeftAnimation}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                      >
+                        ROCKET UP IN</Typography>
+                    </Grid>
+                  </Grid>
+                } />
+                <CardContent>
+                  <Grid container spacing={0} justifyContent="center" alignItems="center">
+                    <Grid xs={12} display="flex" justifyContent="center">
+                      <Countdown date={'2024-05-20T10:00:00'} renderer={timerRender} />
+                    </Grid>
+                  </Grid>
+                </CardContent>
               </Card>
             </Grid>
           </Grid>
