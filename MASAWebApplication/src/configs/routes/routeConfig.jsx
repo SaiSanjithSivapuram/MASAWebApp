@@ -1,20 +1,25 @@
-import { createBrowserRouter } from "react-router-dom";
-import HomePage from "../../pages/home/HomePage";
-import AboutPage from "../../pages/about/AboutPage";
-import LeadershipTeamPage from "../../pages/about/LeaderShipTeamPage";
+import { lazy } from "react";
+import Teams from "../../pages/teams/Teams";
+const HomePage = lazy(() => import("../../pages/home/HomePage"));
+const AboutPage = lazy(() => import("../../pages/about/AboutPage"));
 
 const routeConfig = [
     {
         path: "/",
+        exact: true,
+        headerContent: true,
         element: <HomePage />
     },
     {
         path: "/aboutus",
+        exact: true,
+        headerContent: true,
         element: <AboutPage />,
     },
     {
-        path: "/leadershipTeam",
-        element: <LeadershipTeamPage />
+        path: "/aboutus/:team",
+        headerContent: true,
+        element: <Teams />
     }
 ]
 

@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useState } from 'react'
+import React, { forwardRef } from 'react'
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import AppBar from '@mui/material/AppBar';
@@ -8,7 +8,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeDialog } from './store/layoutSlice';
 import Grow from '@mui/material/Grow';
-import { DialogContent, Divider, Grid } from '@mui/material';
+import { DialogContent, Grid } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router';
 import "./MenuDialog.css"
 import { navigationConfig } from '../configs/navigation/navigationConfig';
@@ -66,7 +66,7 @@ function MenuDialog() {
               </IconButton>
             </Grid>
             <Grid xs={6} sm={8} lg={10} display="flex" justifyContent="center">
-              <img src='icons/masalogo.png' width={100} className='menu-logo' />
+              <img src='/icons/masalogo.png' width={100} className='menu-logo' />
             </Grid>
           </Grid>
         </AppBar>

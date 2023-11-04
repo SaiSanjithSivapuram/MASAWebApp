@@ -91,25 +91,25 @@ export const navigationConfig = {
       {
         icon: <Groups2Icon />,
         name: "Leadership Team",
-        url: "/leadershipteam",
+        url: "/aboutus/leadership-team",
         size: 3,
       },
       {
         icon: <AccountTreeIcon />,
         name: "Project Management Team",
-        url: "/projectmanagement",
+        url: "/aboutus/project-management-team",
         size: 3,
       },
       {
         icon: <BoltIcon />,
         name: "Electrical Team",
-        url: "/electricalteam",
+        url: "/aboutus/electrical-team",
         size: 3,
       },
       {
         icon: <PrecisionManufacturingIcon />,
         name: "Mechanical Team",
-        url: "/mechanicalteam",
+        url: "/aboutus/mechanical-team",
         size: 3,
       }
     ],

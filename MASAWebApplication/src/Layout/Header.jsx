@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useDispatch } from 'react-redux';
 import { openDialog } from './store/layoutSlice';
 import MenuDialog from './MenuDialog';
-import { AnimatePresence, motion, transform, useMotionValueEvent, useScroll } from 'framer-motion';
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import { Grid } from '@mui/material';
-import "./Header.css";
 import { useLocation } from 'react-router';
+import "./Header.css";
 
 function Header() {
   const dispatch = useDispatch()
@@ -20,6 +18,10 @@ function Header() {
   const { scrollY } = useScroll()
   const [toggle, setToggle] = useState(false)
   const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [location.pathname])
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (location.pathname == '/') {
@@ -69,7 +71,7 @@ function Header() {
             </Grid>
             <Grid xs={11} display="flex" justifyContent="flex-end">
               <Button color="inherit" className='navBrandLogo'>
-                <img src='icons/masalogo.png' width={150} />
+                <img src='/icons/masalogo.png' width={150} />
               </Button>
             </Grid>
           </Grid>

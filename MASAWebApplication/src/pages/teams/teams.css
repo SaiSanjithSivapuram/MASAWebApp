@@ -1,0 +1,47 @@
+.pageHeader {
+    width: 100%;
+    height: 60vh;
+    background-color: #032e63;
+}
+
+.page-title {
+    color: white !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.heading {
+    font-weight: 900 !important;
+}
+
+.card-title {
+    color: #032e63 !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 900 !important;
+}
+
+.team-image {
+    border: 1px solid transparent;
+    border-radius: 20px;
+    width: 60%;
+    height: auto;
+    margin: 20px auto;
+}
+
+.contactIcon {
+    border: none !important;
+    padding: 12px !important;
+    background-color: #032e63 !important;
+    color: white !important;
+    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.20) !important;
+    height: fit-content !important;
+    background-image: linear-gradient(90deg, transparent 0%, transparent 50%, #FFCF06 50%, #FFFC06 100%) !important;
+    background-size: 201% !important;
+    transition: background-position .2s cubic-bezier(.47, .1, 1, .63), color .2s linear !important;
+    transition: 0.1s linear !important;
+}
+
+.contactIcon:hover {
+    color: #032e63 !important;
+    border: none !important;
+    background-position: -99.5% 100% !important;
+}

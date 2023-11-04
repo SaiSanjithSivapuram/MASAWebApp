@@ -1,37 +1,19 @@
-import React, { useState } from 'react'
+import React, { lazy } from 'react'
 import { Button, Card, CardActionArea, CardContent, CardHeader, CardMedia, Grid, Icon, Typography } from '@mui/material'
 import CorporateFareIcon from '@mui/icons-material/CorporateFare';
 import DescriptionIcon from '@mui/icons-material/Description';
-import SocialMedia from '../../component/social_media/social_media';
 import { AnimatePresence, motion } from 'framer-motion';
 import MemoryIcon from '@mui/icons-material/Memory';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import Countdown from 'react-countdown';
 import "./Home.css"
+import { LeadTeamData } from '../../data/LeadTeamData';
+import { useNavigate } from 'react-router';
+const InstagramCarousel = lazy(() => import('../../component/instagram_carousel/InstagramCarousel'));
 
 function HomePage() {
-  const mainTeam = [
-    {
-      name: "Andrey",
-      organization: "Leadership",
-      description: "I am Andrea. I am currently the Electrical Team Lead handling the circuit functionality of rockets."
-    },
-    {
-      name: "Bruna",
-      organization: "Mechanical",
-      description: "I am Andrea. I am currently the Electrical Team Lead handling the circuit functionality of rockets."
-    },
-    {
-      name: "Andrea",
-      organization: "Electirc",
-      description: "I am Andrea. I am currently the Electrical Team Lead handling the circuit functionality of rockets."
-    },
-    {
-      name: "Perla",
-      organization: "Project Management",
-      description: "I am Andrea. I am currently the Electrical Team Lead handling the circuit functionality of rockets."
-    }
-  ]
+
+  const navigate = useNavigate();
 
   const cardBgAnimation = {
     hidden: { opacity: 0, y: -20 },
@@ -172,7 +154,7 @@ function HomePage() {
 
   return (
     <div>
-      <div className='main-img' style={{ backgroundImage: "linear-gradient(rgba(3, 46, 99, 0.4), rgba(3, 46, 99, 0.4)), url('RocketImage.jpeg')" }}>
+      <div className='main-img' style={{ backgroundImage: "linear-gradient(rgba(3, 46, 99, 0.4), rgba(3, 46, 99, 0.4)), url('/MASAMainBg.jpeg')" }}>
         <AnimatePresence>
           <motion.div
             initial={{ opacity: 0 }}
@@ -305,7 +287,7 @@ function HomePage() {
         >
           <Grid container spacing={0} justifyContent="space-around">
             <Grid xs={12} lg={5} display="flex" justifyContent="flex-end">
-              <Card className='sponsers-card' sx={{ padding: "20px 0px", margin: "20px auto", width: "100%" }}
+              <Card className='sponsers-card' sx={{ padding: "20px 0px", margin: "20px auto", width: "92%" }}
                 component={motion.div}
                 whileHover={{ scale: 1.02 }}
               >
@@ -319,7 +301,7 @@ function HomePage() {
                         whileInView="visible"
                         viewport={{ once: true }}
                       >
-                        OUR SPONSERS</Typography>
+                        OUR SPONSORS</Typography>
                     </Grid>
                   </Grid>
                 } />
@@ -348,7 +330,7 @@ function HomePage() {
               </Card>
             </Grid>
             <Grid xs={12} lg={5} display="flex" justifyContent="flex-start">
-              <Card className='sponsers-card' sx={{ padding: "20px 0px", margin: "20px auto", width: "100%" }}
+              <Card className='sponsers-card' sx={{ padding: "20px 0px", margin: "20px auto", width: "92%" }}
                 component={motion.div}
                 whileHover={{ scale: 1.02 }}
               >
@@ -399,7 +381,7 @@ function HomePage() {
               >
                 LEAD TEAM</Typography>
             </Grid>
-            {mainTeam.map((member, index) => {
+            {LeadTeamData.map((member, index) => {
               return (
                 <Grid xs={12} lg={3} display="flex" justifyContent="center">
                   <Card sx={{ width: 300, position: "relative" }} className='core-team-card'
@@ -411,17 +393,18 @@ function HomePage() {
                     }}
                     whileTap={{ scale: 0.9 }}
                     viewport={{ once: true }}
+                    onClick={() => { navigate(member.url) }}
                   >
                     <CardActionArea>
                       <motion.div layout>
                         <CardMedia
                           component="img"
                           height="290"
-                          image={`team-members/${member.name}.png`}
-                          alt="green iguana"
+                          image={`/team-members/${member.name}.png`}
+                          alt={member.name}
                         />
                         <CardContent>
-                          <Grid container spacing={0} justifyContent="center" style={{ position: 'absolute', bottom: 170 }}>
+                          <Grid container spacing={0} justifyContent="center" style={{ position: 'absolute', bottom: 125 }}>
                             <Grid xs={12} display="flex" justifyContent="flex-start">
                               <Typography variant="h5" component="div" color="white" className='core-team-card-content'>
                                 {member.name.toUpperCase()}
@@ -448,7 +431,7 @@ function HomePage() {
                             </Grid>
                             <Grid xs={10.5} display="flex" justifyContent="flex-start">
                               <Typography variant="body1" className='core-team-card-content description'>
-                                {member.description}
+                                {member.description.slice(0,50) + "..."}
                               </Typography>
                             </Grid>
                           </Grid>
@@ -466,15 +449,19 @@ function HomePage() {
       <div className='social-media-content'>
         <Grid container spacing={0} justifyContent="center">
           <Grid xs={12} display="flex" justifyContent="center">
-            <Typography sx={{ typography: { md: 'h3', xs: 'h5' } }} className='intro-title'>OUR SOCIAL</Typography>
+            <Typography sx={{ typography: { md: 'h3', xs: 'h5' } }} className='intro-title title1'>OUR SOCIAL</Typography>
           </Grid>
         </Grid>
-        <Grid container spacing={0} justifyContent="center">
-          {/* <Grid xs={12} display="flex" justifyContent="center"> */}
-          {/* <Card className='social-media-card' sx={{ width: "95vw" }}> */}
-          <SocialMedia />
-          {/* </Card> */}
-          {/* </Grid> */}
+        <Grid container spacing={0} justifyContent="space-around">
+          <Grid xs={12} lg={4} display="flex" justifyContent="center">
+            <InstagramCarousel />
+          </Grid>
+          <Grid xs={12} lg={4} display="flex" justifyContent="center">
+            <InstagramCarousel />
+          </Grid>
+          <Grid xs={12} lg={4} display="flex" justifyContent="center">
+            <InstagramCarousel />
+          </Grid>
         </Grid>
       </div>
     </div >

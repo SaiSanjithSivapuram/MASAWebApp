@@ -1,9 +1,9 @@
-import React from 'react'
-import Header from './Header'
+import React, { lazy, useEffect } from 'react'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import routeConfig from '../configs/routes/routeConfig';
 import "./Layout.css"
-import Footer from './footer/FooterComponent';
+const Header = lazy(() => import('./Header'));
+const Footer = lazy(() => import('./footer/FooterComponent'));
 
 function Layout() {
 
@@ -17,7 +17,7 @@ function Layout() {
               <Route key={index} path={route.path}
                 element={
                   <React.Suspense>
-                    {route.path != "/" && (
+                    {!route.headerContent && (
                       <div style={{ height: "100px" }}/>
                     )}
                     {route.element}

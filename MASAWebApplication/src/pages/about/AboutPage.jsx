@@ -1,10 +1,21 @@
 import React from 'react';
 import CableIcon from '@mui/icons-material/Cable';
-import { Button, Card, CardActionArea, CardContent, CardHeader, CardMedia, Grid, Icon, Typography } from '@mui/material'
+import { Card, Grid, Typography } from '@mui/material'
 import { motion } from 'framer-motion';
 import "./About.css"
 
 function AboutPage() {
+
+  const fadeAnimation = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        type: "tween",
+        delay: 0.2
+      }
+    }
+  }
 
   const slideLeftAnimation = {
     hidden: { x: 40, opacity: 0 },
@@ -32,7 +43,31 @@ function AboutPage() {
 
   return (
     <div className='aboutus-page'>
-      <div>
+      <div className='pageHeader'>
+        <Grid container spacing={0} justifyContent="center" alignItems="center">
+          <Grid xs={11} lg={12} display="flex" justifyContent="center">
+            <Typography sx={{ typography: { xs: 'h6', lg: 'h3', margin: "140px auto 30px auto" } }} className='page-title heading'
+              component={motion.div}
+              variants={fadeAnimation}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              ABOUT MASA</Typography>
+          </Grid>
+          <Grid xs={11} lg={12} display="flex" justifyContent="center">
+            <Typography sx={{ typography: { xs: 'h6' } }} className='page-title'
+              component={motion.div}
+              variants={fadeAnimation}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              About MASA content</Typography>
+          </Grid>
+        </Grid>
+      </div>
+      <div style={{ width: "96%", margin: "20px auto"}}>
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -47,13 +82,13 @@ function AboutPage() {
                 whileInView="visible"
                 viewport={{ once: true }}
               >
-                ABOUT MASA</Typography>
+                OUR CURRENT TEAMS</Typography>
             </Grid>
             <Grid xs={12} display="flex" justifyContent="center">
             </Grid>
           </Grid>
           <Grid container spacing={0} justifyContent="space-around" alignItems="center">
-            <Grid xs={12} lg={3} display="flex" justifyContent="center">
+            <Grid xs={12} lg={6} display="flex" justifyContent="center">
               <Card className='team-card' sx={{ padding: "20px 0px", margin: "20px auto", width: "70%" }}
                 component={motion.div}
                 variants={slideRightAnimation}
@@ -66,7 +101,7 @@ function AboutPage() {
                     <CableIcon className='card-icon' />
                   </Grid>
                   <Grid xs={12} display="flex" justifyContent="center">
-                    <Typography sx={{ typography: { xs: 'h6', lg: 'h5' } }} className='card-title'
+                    <Typography sx={{ typography: { xs: 'h6', lg: 'p' } }} className='card-title'
                       component={motion.div}
                       variants={slideRightAnimation}
                       initial="hidden"
@@ -78,7 +113,7 @@ function AboutPage() {
                 </Grid>
               </Card>
             </Grid>
-            <Grid xs={12} lg={3} display="flex" justifyContent="center">
+            <Grid xs={12} lg={6} display="flex" justifyContent="center">
               <Card className='team-card' sx={{ padding: "20px 0px", margin: "20px auto", width: "70%" }}
                 component={motion.div}
                 variants={slideRightAnimation}
@@ -91,7 +126,7 @@ function AboutPage() {
                     <CableIcon className='card-icon' />
                   </Grid>
                   <Grid xs={12} display="flex" justifyContent="center">
-                    <Typography sx={{ typography: { xs: 'h6', lg: 'h5' } }} className='card-title'
+                    <Typography sx={{ typography: { xs: 'h6', lg: 'p' } }} className='card-title'
                       component={motion.div}
                       variants={slideRightAnimation}
                       initial="hidden"
@@ -103,7 +138,7 @@ function AboutPage() {
                 </Grid>
               </Card>
             </Grid>
-            <Grid xs={12} lg={3} display="flex" justifyContent="center">
+            <Grid xs={12} lg={6} display="flex" justifyContent="center">
               <Card className='team-card' sx={{ padding: "20px 0px", margin: "20px auto", width: "70%" }}
                 component={motion.div}
                 variants={slideRightAnimation}
@@ -116,7 +151,7 @@ function AboutPage() {
                     <CableIcon className='card-icon' />
                   </Grid>
                   <Grid xs={12} display="flex" justifyContent="center">
-                    <Typography sx={{ typography: { xs: 'h6', lg: 'h5' } }} className='card-title'
+                    <Typography sx={{ typography: { xs: 'h6', lg: 'p' } }} className='card-title'
                       component={motion.div}
                       variants={slideRightAnimation}
                       initial="hidden"
@@ -128,7 +163,7 @@ function AboutPage() {
                 </Grid>
               </Card>
             </Grid>
-            <Grid xs={12} lg={3} display="flex" justifyContent="center">
+            <Grid xs={12} lg={6} display="flex" justifyContent="center">
               <Card className='team-card' sx={{ padding: "20px 0px", margin: "20px auto", width: "70%" }}
                 component={motion.div}
                 variants={slideRightAnimation}
@@ -141,7 +176,7 @@ function AboutPage() {
                     <CableIcon className='card-icon' />
                   </Grid>
                   <Grid xs={12} display="flex" justifyContent="center">
-                    <Typography sx={{ typography: { xs: 'h6', lg: 'h5' } }} className='card-title'
+                    <Typography sx={{ typography: { xs: 'h6', lg: 'p' } }} className='card-title'
                       component={motion.div}
                       variants={slideRightAnimation}
                       initial="hidden"
