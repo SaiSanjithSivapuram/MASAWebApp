@@ -1,7 +1,8 @@
 import React, { lazy, useEffect } from 'react'
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import routeConfig from '../configs/routes/routeConfig';
 import "./Layout.css"
+import Error404 from '../pages/errorPages/Error404';
 const Header = lazy(() => import('./Header'));
 const Footer = lazy(() => import('./footer/FooterComponent'));
 
@@ -18,13 +19,17 @@ function Layout() {
                 element={
                   <React.Suspense>
                     {!route.headerContent && (
-                      <div style={{ height: "100px" }}/>
+                      <div style={{ height: "100px" }} />
                     )}
                     {route.element}
                   </React.Suspense>
                 } />
             )
             )}
+            <Route path='*' element={
+              <React.Suspense>
+                <Error404 />
+              </React.Suspense>} />
           </Routes>
         </div>
         <Footer />

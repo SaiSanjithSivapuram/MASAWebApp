@@ -6,10 +6,12 @@ import { AnimatePresence, motion } from 'framer-motion';
 import MemoryIcon from '@mui/icons-material/Memory';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import Countdown from 'react-countdown';
-import "./Home.css"
 import { LeadTeamData } from '../../data/LeadTeamData';
 import { useNavigate } from 'react-router';
+import MediaCarousel from '../../component/media_carousel/MediaCarousel';
+import "./Home.css";
 const InstagramCarousel = lazy(() => import('../../component/instagram_carousel/InstagramCarousel'));
+const LinkedinCarousel = lazy(() => import('../../component/linkedin_carousel/LinkedinCarousel'));
 
 function HomePage() {
 
@@ -69,7 +71,7 @@ function HomePage() {
       return (
         <Grid container spacing={0} justifyContent="space-around">
           <Grid xs={3} display="flex" justifyContent="center">
-            <Typography sx={{ typography: { xs: 'h4' } }} className='card-time-title'
+            <Typography sx={{ typography: { xs: 'h5', md: 'h3' } }} className='card-bg-time-title'
               component={motion.div}
               variants={slideLeftAnimation}
               initial="hidden"
@@ -79,7 +81,7 @@ function HomePage() {
               {days} </Typography>
           </Grid>
           <Grid xs={3} display="flex" justifyContent="center">
-            <Typography sx={{ typography: { xs: 'h4' } }} className='card-time-title'
+            <Typography sx={{ typography: { xs: 'h5', md: 'h3' } }} className='card-bg-time-title'
               component={motion.div}
               variants={slideLeftAnimation}
               initial="hidden"
@@ -89,7 +91,7 @@ function HomePage() {
               {hours} </Typography>
           </Grid>
           <Grid xs={3} display="flex" justifyContent="center">
-            <Typography sx={{ typography: { xs: 'h4' } }} className='card-time-title'
+            <Typography sx={{ typography: { xs: 'h5', md: 'h3' } }} className='card-bg-time-title'
               component={motion.div}
               variants={slideLeftAnimation}
               initial="hidden"
@@ -99,7 +101,7 @@ function HomePage() {
               {minutes} </Typography>
           </Grid>
           <Grid xs={3} display="flex" justifyContent="center">
-            <Typography sx={{ typography: { xs: 'h4' } }} className='card-time-title'
+            <Typography sx={{ typography: { xs: 'h5', md: 'h3' } }} className='card-bg-time-title'
               component={motion.div}
               variants={slideLeftAnimation}
               initial="hidden"
@@ -109,7 +111,7 @@ function HomePage() {
               {seconds} </Typography>
           </Grid>
           <Grid xs={3} display="flex" justifyContent="center">
-            <Typography sx={{ typography: { xs: 'h6' } }} className='card-time-title'
+            <Typography sx={{ typography: { xs: 'p', md: 'h6' } }} className='card-bg-time-title'
               component={motion.div}
               variants={slideLeftAnimation}
               initial="hidden"
@@ -119,7 +121,7 @@ function HomePage() {
               days </Typography>
           </Grid>
           <Grid xs={3} display="flex" justifyContent="center">
-            <Typography sx={{ typography: { xs: 'h6' } }} className='card-title'
+            <Typography sx={{ typography: { xs: 'p', md: 'h6' } }} className='card-bg-time-title'
               component={motion.div}
               variants={slideLeftAnimation}
               initial="hidden"
@@ -129,7 +131,7 @@ function HomePage() {
               hours </Typography>
           </Grid>
           <Grid xs={3} display="flex" justifyContent="center">
-            <Typography sx={{ typography: { xs: 'h6' } }} className='card-title'
+            <Typography sx={{ typography: { xs: 'p', md: 'h6' } }} className='card-bg-time-title'
               component={motion.div}
               variants={slideLeftAnimation}
               initial="hidden"
@@ -139,7 +141,7 @@ function HomePage() {
               minutes </Typography>
           </Grid>
           <Grid xs={3} display="flex" justifyContent="center">
-            <Typography sx={{ typography: { xs: 'h6' } }} className='card-title'
+            <Typography sx={{ typography: { xs: 'p', md: 'h6' } }} className='card-bg-time-title'
               component={motion.div}
               variants={slideLeftAnimation}
               initial="hidden"
@@ -279,14 +281,14 @@ function HomePage() {
           </Grid>
         </Grid>
       </div>
-      <div className='sponsers-content'>
+      <div className='sponsers-content' style={{ width: "96vw", margin: "10px auto" }}>
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
           <Grid container spacing={0} justifyContent="space-around">
-            <Grid xs={12} lg={5} display="flex" justifyContent="flex-end">
+            <Grid xs={12} lg={6} display="flex" justifyContent="flex-end">
               <Card className='sponsers-card' sx={{ padding: "20px 0px", margin: "20px auto", width: "92%" }}
                 component={motion.div}
                 whileHover={{ scale: 1.02 }}
@@ -294,7 +296,7 @@ function HomePage() {
                 <CardHeader title={
                   <Grid container spacing={0} justifyContent="flex-start">
                     <Grid xs={12} display="flex" justifyContent="center">
-                      <Typography sx={{ typography: { xs: 'h6' } }} className='card-title'
+                      <Typography sx={{ typography: { xs: 'h6' } }} className='title1'
                         component={motion.div}
                         variants={slideLeftAnimation}
                         initial="hidden"
@@ -329,22 +331,23 @@ function HomePage() {
                 </CardContent>
               </Card>
             </Grid>
-            <Grid xs={12} lg={5} display="flex" justifyContent="flex-start">
+            <Grid xs={12} lg={6} display="flex" justifyContent="flex-start">
               <Card className='sponsers-card' sx={{ padding: "20px 0px", margin: "20px auto", width: "92%" }}
                 component={motion.div}
                 whileHover={{ scale: 1.02 }}
+                style={{ backgroundImage: "linear-gradient(rgba(3, 46, 99, 0.4), rgba(3, 46, 99, 0.4)), url('/MASAMainBg.jpeg')" }}
               >
                 <CardHeader title={
                   <Grid container spacing={0} justifyContent="flex-start">
                     <Grid xs={12} display="flex" justifyContent="center">
-                      <Typography sx={{ typography: { xs: 'h6' } }} className='card-title'
+                      <Typography sx={{ typography: { xs: 'p', md: 'h6' } }} className='card-bg-time-title'
                         component={motion.div}
                         variants={slideLeftAnimation}
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
                       >
-                        ROCKET UP IN</Typography>
+                        PROJECT SHAGEE UP IN</Typography>
                     </Grid>
                   </Grid>
                 } />
@@ -352,6 +355,23 @@ function HomePage() {
                   <Grid container spacing={0} justifyContent="center" alignItems="center">
                     <Grid xs={12} display="flex" justifyContent="center">
                       <Countdown date={'2024-05-20T10:00:00'} renderer={timerRender} />
+                    </Grid>
+                    <Grid xs={12} display="flex" justifyContent="center">
+                      <Button
+                        edge="start"
+                        className='rocket-btn'
+                        variant='outlined'
+                        component={motion.div}
+                      >
+                        <Typography variant='p' className='header-title'
+                          component={motion.div}
+                          variants={slideLeftAnimation}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: true }}
+                        >
+                          KNOW MORE ABOUT SHAGEE</Typography>
+                      </Button>
                     </Grid>
                   </Grid>
                 </CardContent>
@@ -431,7 +451,7 @@ function HomePage() {
                             </Grid>
                             <Grid xs={10.5} display="flex" justifyContent="flex-start">
                               <Typography variant="body1" className='core-team-card-content description'>
-                                {member.description.slice(0,50) + "..."}
+                                {member.description.slice(0, 50) + "..."}
                               </Typography>
                             </Grid>
                           </Grid>
@@ -447,20 +467,20 @@ function HomePage() {
         </Card>
       </div>
       <div className='social-media-content'>
-        <Grid container spacing={0} justifyContent="center">
+        {/* <Grid container spacing={0} justifyContent="center">
           <Grid xs={12} display="flex" justifyContent="center">
-            <Typography sx={{ typography: { md: 'h3', xs: 'h5' } }} className='intro-title title1'>OUR SOCIAL</Typography>
+            <Typography sx={{ typography: { md: 'h4', xs: 'h5' } }} className='intro-title title1'>OUR SOCIAL</Typography>
           </Grid>
-        </Grid>
+        </Grid> */}
         <Grid container spacing={0} justifyContent="space-around">
           <Grid xs={12} lg={4} display="flex" justifyContent="center">
             <InstagramCarousel />
           </Grid>
           <Grid xs={12} lg={4} display="flex" justifyContent="center">
-            <InstagramCarousel />
+            <LinkedinCarousel />
           </Grid>
           <Grid xs={12} lg={4} display="flex" justifyContent="center">
-            <InstagramCarousel />
+            <MediaCarousel />
           </Grid>
         </Grid>
       </div>

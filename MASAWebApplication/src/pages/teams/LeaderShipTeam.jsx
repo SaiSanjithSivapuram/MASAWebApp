@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import EmailIcon from '@mui/icons-material/Email';
 import InfoIcon from '@mui/icons-material/Info';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import Groups2Icon from '@mui/icons-material/Groups2';
 import { TeamsData } from '../../data/TeamsData';
 import "./Teams.css"
 
@@ -47,28 +48,37 @@ function LeadershipTeamPage({ team }) {
   return (
     <div className='aboutus-page'>
       <div className='pageHeader'>
-        <Grid container spacing={0} justifyContent="center" alignItems="center">
-          <Grid xs={11} lg={12} display="flex" justifyContent="center">
-            <Typography sx={{ typography: { xs: 'h6', lg: 'h3', margin: "140px auto 30px auto" } }} className='page-title heading'
-              component={motion.div}
-              variants={fadeAnimation}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              {TeamsData[team].organization.toUpperCase()}</Typography>
+        <motion.div
+          variants={fadeAnimation}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <Grid container spacing={0} justifyContent="center" alignItems="center">
+            <Grid xs={11} lg={12} display="flex" justifyContent="center" alignItems={'center'}>
+              <Groups2Icon sx={{ typography: { xs: 'h6', lg: 'h3', margin: "140px 10px 30px auto" } }} className='page-title'
+              />
+              <Typography sx={{ typography: { xs: 'h6', lg: 'h3', margin: "140px auto 30px 10px" } }} className='page-title heading'
+                component={motion.div}
+                variants={fadeAnimation}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                {TeamsData[team].organization.toUpperCase()}</Typography>
+            </Grid>
+            <Grid xs={11} lg={12} display="flex" justifyContent="center">
+              <Typography sx={{ typography: { xs: 'h6' } }} className='page-title'
+                component={motion.div}
+                variants={fadeAnimation}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                {TeamsData[team].description}</Typography>
+            </Grid>
           </Grid>
-          <Grid xs={11} lg={12} display="flex" justifyContent="center">
-            <Typography sx={{ typography: { xs: 'h6' } }} className='page-title'
-              component={motion.div}
-              variants={fadeAnimation}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              {TeamsData[team].description}</Typography>
-          </Grid>
-        </Grid>
+        </motion.div>
       </div>
       <div style={{ width: "96%", margin: "0px auto" }}>
         {TeamsData[team].team.map((member, index) => {
@@ -187,4 +197,4 @@ function LeadershipTeamPage({ team }) {
   )
 }
 
-export default LeadershipTeamPage;
+export default LeadershipTeamPage; 

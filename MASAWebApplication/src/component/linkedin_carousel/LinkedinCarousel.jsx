@@ -1,11 +1,11 @@
 import React, { lazy } from 'react'
-import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { Card, CardContent, CardHeader, Grid, Typography } from '@mui/material'
 import { motion } from 'framer-motion';
-import "./InstagramCarousel.css";
+import "./LinkedinCarousel.css";
 const Carousel = lazy(() => import('react-material-ui-carousel'));
 
-function InstagramCarousel() {
+function LinkedinCarousel() {
     var items = [
         {
             name: "Random Name #1",
@@ -63,7 +63,7 @@ function InstagramCarousel() {
                 <CardHeader title={
                     <Grid container spacing={0} justifyContent="flex-start">
                         <Grid xs={12} display="flex" justifyContent="center">
-                            <InstagramIcon />
+                            <LinkedInIcon />
                         </Grid>
                     </Grid>}
                 />
@@ -93,4 +93,4 @@ function InstagramCarousel() {
     )
 }
 
-export default InstagramCarousel
+export default LinkedinCarousel
