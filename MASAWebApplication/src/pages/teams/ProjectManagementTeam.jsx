@@ -39,15 +39,44 @@ function ProjectManagementTeam({ team }) {
                             >
                                 {TeamsData[team].organization.toUpperCase()}</Typography>
                         </Grid>
-                        <Grid xs={11} lg={12} display="flex" justifyContent="center">
-                            <Typography sx={{ typography: { xs: 'h6' } }} className='page-title'
-                                component={motion.div}
-                                variants={fadeAnimation}
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true }}
-                            >
-                                {TeamsData[team].description}</Typography>
+                        <Grid container spacing={0} justifyContent={{ xs: "center", lg: "space-around" }} alignItems="center">
+                            <Grid xs={11} lg={6} display="flex" justifyContent="center">
+                                <Typography sx={{ typography: 'p' }} className='page-title'
+                                    component={motion.div}
+                                    variants={fadeAnimation}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                >
+                                    {TeamsData[team].description}</Typography>
+                            </Grid>
+                            <Grid xs={11} lg={3} display="flex-col" justifyContent="center">
+                                <motion.div
+                                    style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+                                    variants={fadeAnimation}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                >
+                                    <img src={`/team-members/${TeamsData[team].leadName}.png`} className='team-header-image' />
+                                </motion.div>
+                                <motion.div
+                                    style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+                                    variants={fadeAnimation}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                >
+                                    <Typography sx={{ typography: 'p' }} className='page-title heading'
+                                        component={motion.div}
+                                        variants={fadeAnimation}
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ once: true }}
+                                    >
+                                        {TeamsData[team].leadName.toUpperCase()}</Typography>
+                                </motion.div>
+                            </Grid>
                         </Grid>
                     </Grid>
                 </motion.div>

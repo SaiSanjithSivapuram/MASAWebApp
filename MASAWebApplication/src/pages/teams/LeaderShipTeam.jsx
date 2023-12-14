@@ -67,8 +67,8 @@ function LeadershipTeamPage({ team }) {
               >
                 {TeamsData[team].organization.toUpperCase()}</Typography>
             </Grid>
-            <Grid xs={11} lg={12} display="flex" justifyContent="center">
-              <Typography sx={{ typography: { xs: 'h6' } }} className='page-title'
+            <Grid xs={9} display="flex" justifyContent="center">
+              <Typography sx={{ typography: 'p' }} className='page-title'
                 component={motion.div}
                 variants={fadeAnimation}
                 initial="hidden"
@@ -168,7 +168,7 @@ function LeadershipTeamPage({ team }) {
                           <LinkedInIcon />
                         </IconButton>
                       </Grid>
-                      <Grid xs={4} display="flex" justifyContent="center">
+                      {member.url != '/aboutus/leadership-team' && <Grid xs={4} display="flex" justifyContent="center">
                         <IconButton className='contactIcon'
                           component={motion.a}
                           variants={slideLeftAnimation}
@@ -179,11 +179,11 @@ function LeadershipTeamPage({ team }) {
                             transition: { duration: 0.3 },
                           }}
                           viewport={{ once: true }}
-                          href=""
+                          href={member.url}
                         >
                           <InfoIcon />
                         </IconButton>
-                      </Grid>
+                      </Grid>}
                     </Grid>
                   </Grid>
                 </Grid>

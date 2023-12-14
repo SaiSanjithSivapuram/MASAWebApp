@@ -20,7 +20,7 @@ function Header() {
   const location = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0)
   }, [location.pathname])
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -57,7 +57,7 @@ function Header() {
       />
       <AppBar position="fixed" color={scrollThreshold ? 'default' : 'transparent'} className='customnavbar'>
         <Toolbar>
-          <Grid container spacing={1} justifyContent="center">
+          <Grid container spacing={1} justifyContent="center" alignItems={"center"}>
             <Grid xs={1} display="flex" justifyContent="flex-start">
               <IconButton
                 edge="start"
@@ -66,13 +66,13 @@ function Header() {
                 className='navMenuLogoBtn'
                 onClick={() => dispatch(openDialog())}
               >
-                <MenuIcon />
+                <MenuIcon style={toggle ? { color: '#032e63' } : { color: 'white' }} />
               </IconButton>
             </Grid>
             <Grid xs={11} display="flex" justifyContent="flex-end">
-              <Button color="inherit" className='navBrandLogo'>
-                <img src='/icons/masalogo.png' width={150} />
-              </Button>
+              {toggle ?
+                <img src='/icons/MASA Logo Color.svg' className='navBrandLogo' width={150} /> :
+                <img src='/icons/MASA Logo White.svg' className='navBrandLogo' width={150} />}
             </Grid>
           </Grid>
         </Toolbar>

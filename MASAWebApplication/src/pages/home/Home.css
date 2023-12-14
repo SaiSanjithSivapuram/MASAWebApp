@@ -149,3 +149,8 @@
     color: #FFCF06;
     transition: ease-in 0.2s;
 }
+
+.social-media-content {
+    width: 96%;
+    margin: 0px auto;
+}

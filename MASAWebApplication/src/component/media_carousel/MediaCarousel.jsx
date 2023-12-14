@@ -52,7 +52,7 @@ function MediaCarousel() {
 
     return (
         <div>
-            <Card sx={{ width: { xs: "90vw", lg: "26vw" }, height: "auto" }}
+            <Card sx={{ width: { xs: "90vw", lg: "26vw" }, height: "700px" }}
                 component={motion.div}
                 variants={fadeAnimation}
                 initial="hidden"
@@ -70,6 +70,7 @@ function MediaCarousel() {
                 {/* <CardContent> */}
                 <Carousel
                     animation='slide'
+                    indicators={false}
                 >
                     {
                         items.map((item, i) => {

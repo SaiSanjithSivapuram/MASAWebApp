@@ -27,6 +27,13 @@
     margin: 20px auto;
 }
 
+.team-header-image {
+    border: 1px solid transparent;
+    border-radius: 20px;
+    width: 40%;
+    height: auto;
+}
+
 .contactIcon {
     border: none !important;
     padding: 12px !important;

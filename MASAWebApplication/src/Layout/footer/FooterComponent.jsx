@@ -47,7 +47,7 @@ function Footer() {
             className='footer-bg'
         >
             <Grid container spacing={0} display="flex" justifyContent="space-around" sx={{ margin: '50px auto 0px auto' }}>
-                <Grid xs={12} lg={6} display="flex" justifyContent="space-around">
+                <Grid xs={12} lg={4} display="flex" justifyContent="space-around">
                     <Grid xs={4} display="flex" justifyContent="center">
                         <IconButton className='footerIcon facebook-icon'
                             component={motion.a}
@@ -101,7 +101,7 @@ function Footer() {
                         </IconButton>
                     </Grid>
                 </Grid>
-                <Grid xs={12} lg={6} justifyContent="center">
+                <Grid xs={12} lg={4} justifyContent="center">
                     <Grid container spacing={0} display="flex" justifyContent="center">
                         <Grid xs={12} display="flex" justifyContent="center">
                             <Typography sx={{ typography: { md: 'body1', xs: 'body2' }, marginTop: { xs: "30px" } }} className='footer-title'
@@ -147,6 +147,8 @@ function Footer() {
                         whileInView="visible"
                         whileHover={{ scale: 1.15 }}
                         viewport={{ once: true }}
+                        href='https://giving.umich.edu/basket/fund/333617'
+                        target='blank'
                     >
                         <Typography variant='p' className='footer-title'
                             component={motion.div}
@@ -164,6 +166,8 @@ function Footer() {
                         whileInView="visible"
                         whileHover={{ scale: 1.15 }}
                         viewport={{ once: true }}
+                        href='https://forms.office.com/pages/responsepage.aspx?id=tHdu5iRX10SHIQbfFgRQzgjFC4Os2BtBkLEuA0W8ogFUQVk3TUtJSzMxVjNaSUVVSDAzT0tSSVI1Ui4u'
+                        target='blank'
                     >
                         <Typography variant='p' className='footer-title'
                             component={motion.div}
@@ -176,9 +180,16 @@ function Footer() {
                     </Button>
                 </Grid>
                 <Grid xs={12} lg={4} display="flex-col" justifyContent="center">
-                    <Grid container spacing={0} display="flex" justifyContent="flex-start" alignItems='center'>
-                        <Grid xs={12} display="flex" justifyContent="flex-start" alignItems='center'>
-                            <PlaceIcon className='footerIcon' sx={{ marginRight: "10px" }} />
+                    <Grid container spacing={0} display="flex" justifyContent={{ xs: "center", lg: "flex-start" }} alignItems='center' sx={{ marginTop: { xs: "30px", md: "0px" } }}>
+                        <Grid xs={12} display="flex" justifyContent="center" alignItems='center'>
+                            <motion.div
+                                variants={slideLeftAnimation}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true }}
+                            >
+                                <PlaceIcon className='footerIcon' sx={{ marginRight: "10px" }} />
+                            </motion.div>
                             <Typography sx={{ typography: { md: 'body1', xs: 'body2' } }} className='footer-title'
                                 component={motion.div}
                                 variants={slideLeftAnimation}
@@ -192,9 +203,16 @@ function Footer() {
                             </Typography>
                         </Grid>
                     </Grid>
-                    <Grid container spacing={0} display="flex" justifyContent="flex-start" alignItems='center' sx={{ margin: '20px auto 0px auto' }}>
-                        <Grid xs={2} display="flex" justifyContent="flex-start" alignItems='center'>
-                            <PhoneIcon className='footerIcon' sx={{ marginRight: "10px" }} />
+                    <Grid container spacing={0} display="flex" justifyContent={{ xs: "center", lg: "flex-start" }} alignItems='center' sx={{ margin: '20px auto 0px auto' }}>
+                        <Grid xs={2} display="flex" justifyContent="center" alignItems='center'>
+                            <motion.div
+                                variants={slideLeftAnimation}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true }}
+                            >
+                                <PhoneIcon className='footerIcon' sx={{ marginRight: "10px" }} />
+                            </motion.div>
                             <Typography sx={{ typography: { md: 'body1', xs: 'body2' } }} className='footer-title'
                                 component={motion.div}
                                 variants={slideLeftAnimation}
@@ -202,10 +220,15 @@ function Footer() {
                                 whileInView="visible"
                                 viewport={{ once: true }}
                             >
-                                313-455-3213
+                                +1(313)-455-3213
                             </Typography>
                         </Grid>
                     </Grid>
+                </Grid>
+            </Grid>
+            <Grid container spacing={0} display="flex" justifyContent="space-around" sx={{ margin: '50px auto 50px auto' }}>
+                <Grid xs={12} display="flex" justifyContent={"center"}>
+                    <img src='/icons/UMD-CECS.png' className='navBrandLogo' width={50} />
                 </Grid>
             </Grid>
         </motion.div>

@@ -10,6 +10,7 @@ import { LeadTeamData } from '../../data/LeadTeamData';
 import { useNavigate } from 'react-router';
 import MediaCarousel from '../../component/media_carousel/MediaCarousel';
 import "./Home.css";
+import { SocialMediaData } from '../../data/SocialMediaData';
 const InstagramCarousel = lazy(() => import('../../component/instagram_carousel/InstagramCarousel'));
 const LinkedinCarousel = lazy(() => import('../../component/linkedin_carousel/LinkedinCarousel'));
 
@@ -204,7 +205,7 @@ function HomePage() {
       <div>
         <Grid container spacing={0} justifyContent="center">
           <Grid xs={12} lg={6} display="flex" justifyContent={{ xs: "center", lg: "flex-end" }}>
-            <Typography sx={{ typography: { md: 'h4', xs: 'h6' } }} className='intro-title title2'
+            <Typography id='homeHeader' sx={{ typography: { md: 'h4', xs: 'h6' } }} className='intro-title title2'
               component={motion.div}
               variants={slideLeftAnimation}
               initial="hidden"
@@ -212,7 +213,7 @@ function HomePage() {
               viewport={{ once: true }}
             >
               MICHIGAN</Typography>
-            <Typography sx={{ typography: { md: 'h4', xs: 'h6' } }} className='intro-title title1'
+            <Typography id='homeHeader' sx={{ typography: { md: 'h4', xs: 'h6' } }} className='intro-title title1'
               component={motion.div}
               variants={slideLeftAnimation}
               initial="hidden"
@@ -222,7 +223,7 @@ function HomePage() {
               AERONAUTICAL</Typography>
           </Grid>
           <Grid xs={12} lg={5} display="flex" justifyContent={{ xs: "center", lg: "flex-start" }}>
-            <Typography sx={{ typography: { md: 'h4', xs: 'h6' } }} className='intro-title title1'
+            <Typography id='homeHeader' sx={{ typography: { md: 'h4', xs: 'h6' } }} className='intro-title title1'
               component={motion.div}
               variants={slideLeftAnimation}
               initial="hidden"
@@ -230,7 +231,7 @@ function HomePage() {
               viewport={{ once: true }}
             >
               SCIENCE</Typography>
-            <Typography sx={{ typography: { md: 'h4', xs: 'h6' } }} className='intro-title title2'
+            <Typography id='homeHeader' sx={{ typography: { md: 'h4', xs: 'h6' } }} className='intro-title title2'
               component={motion.div}
               variants={slideLeftAnimation}
               initial="hidden"
@@ -354,7 +355,7 @@ function HomePage() {
                 <CardContent>
                   <Grid container spacing={0} justifyContent="center" alignItems="center">
                     <Grid xs={12} display="flex" justifyContent="center">
-                      <Countdown date={'2024-05-20T10:00:00'} renderer={timerRender} />
+                      <Countdown date={'2024-06-17T09:00:00'} renderer={timerRender} />
                     </Grid>
                     <Grid xs={12} display="flex" justifyContent="center">
                       <Button
@@ -399,7 +400,7 @@ function HomePage() {
                 whileInView="visible"
                 viewport={{ once: true }}
               >
-                LEAD TEAM</Typography>
+                LEADERSHIP TEAM</Typography>
             </Grid>
             {LeadTeamData.map((member, index) => {
               return (
@@ -472,12 +473,12 @@ function HomePage() {
             <Typography sx={{ typography: { md: 'h4', xs: 'h5' } }} className='intro-title title1'>OUR SOCIAL</Typography>
           </Grid>
         </Grid> */}
-        <Grid container spacing={0} justifyContent="space-around">
-          <Grid xs={12} lg={4} display="flex" justifyContent="center">
-            <InstagramCarousel />
+        <Grid container spacing={0} justifyContent="center">
+          <Grid xs={12} lg={4} display="flex" justifyContent={{ xs: "center", md: "center" }}>
+            <InstagramCarousel items={SocialMediaData['instagram1']} />
           </Grid>
-          <Grid xs={12} lg={4} display="flex" justifyContent="center">
-            <LinkedinCarousel />
+          <Grid xs={12} lg={4} display="flex" justifyContent={{ xs: "center", md: "center" }}>
+            <InstagramCarousel items={SocialMediaData['instagram2']} />
           </Grid>
           <Grid xs={12} lg={4} display="flex" justifyContent="center">
             <MediaCarousel />

@@ -2,7 +2,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    dialog: { open: false }
+    dialog: { open: false },
 };
 
 const layoutSlice = createSlice({
@@ -14,7 +14,7 @@ const layoutSlice = createSlice({
         },
         closeDialog: (state) => {
             state.dialog.open = false
-        },
+        }
     },
     extraReducers: {
     },

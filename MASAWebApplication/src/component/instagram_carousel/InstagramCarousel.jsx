@@ -1,43 +1,16 @@
 import React, { lazy } from 'react'
 import InstagramIcon from '@mui/icons-material/Instagram';
-import { Card, CardContent, CardHeader, Grid, Typography } from '@mui/material'
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import { SocialMediaData } from '../../data/SocialMediaData';
+import { Card, CardHeader, Grid, Typography } from '@mui/material'
 import { motion } from 'framer-motion';
 import "./InstagramCarousel.css";
+import { useNavigate } from 'react-router';
 const Carousel = lazy(() => import('react-material-ui-carousel'));
 
-function InstagramCarousel() {
-    var items = [
-        {
-            name: "Random Name #1",
-            description: "Probably the most random thing you have ever seen!",
-            image: "/MASAMainBg.jpeg"
-        },
-        {
-            name: "Random Name #2",
-            description: "Hello World!",
-            image: "/MASAMainBg.jpeg"
-        },
-        {
-            name: "Random Name #2",
-            description: "Hello World!",
-            image: "/MASAMainBg.jpeg"
-        },
-        {
-            name: "Random Name #2",
-            description: "Hello World!",
-            image: "/MASAMainBg.jpeg"
-        },
-        {
-            name: "Random Name #2",
-            description: "Hello World!",
-            image: "/MASAMainBg.jpeg"
-        },
-        {
-            name: "Random Name #2",
-            description: "Hello World!",
-            image: "/MASAMainBg.jpeg"
-        }
-    ]
+function InstagramCarousel({ items }) {
+
+    const navigate = useNavigate();
 
     const fadeAnimation = {
         hidden: { opacity: 0 },
@@ -52,7 +25,7 @@ function InstagramCarousel() {
 
     return (
         <div>
-            <Card sx={{ width: { xs: "90vw", lg: "26vw" }, height: "auto" }}
+            <Card sx={{ width: { xs: "90vw", lg: "26vw" }, height: { xs: "400px", lg: "700px" } }}
                 component={motion.div}
                 variants={fadeAnimation}
                 initial="hidden"
@@ -67,27 +40,26 @@ function InstagramCarousel() {
                         </Grid>
                     </Grid>}
                 />
-                {/* <CardContent> */}
                 <Carousel
                     animation='slide'
+                    indicators={false}
                 >
                     {
                         items.map((item, i) => {
                             return (
-                                <>
+                                <a href={item.url} target='blank' className='instagram-card-content'>
                                     <div className='social-image'>
-                                        <img src={item.image} width={"100%"} height={"auto"} />
+                                        <img src={item.imageUrl} width={"100%"} height={"auto"} />
                                     </div>
                                     <div className='social-content'>
-                                        <Typography key={i} >{item.name}</Typography>
-                                        <Typography key={i} >{item.description}</Typography>
+                                        <Typography key={i} sx={{ display: "flex", alignItems: "center", margin: "10px 0px" }}><FavoriteIcon sx={{ marginRight: "6px" }} /> {item.likes}</Typography>
+                                        <Typography key={i} >{item.postText.slice(0, 300) + "..."}</Typography>
                                     </div>
-                                </>
+                                </a>
                             )
                         })
                     }
                 </Carousel>
-                {/* </CardContent> */}
             </Card>
         </div>
     )
