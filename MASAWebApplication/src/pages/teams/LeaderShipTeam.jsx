@@ -47,7 +47,7 @@ function LeadershipTeamPage({ team }) {
 
   return (
     <div className='aboutus-page'>
-      <div className='pageHeader'>
+      <div className='leaderShipPageHeader'>
         <motion.div
           variants={fadeAnimation}
           initial="hidden"
@@ -99,7 +99,7 @@ function LeadershipTeamPage({ team }) {
                       whileInView="visible"
                       viewport={{ once: true }}
                     >
-                      <img src={`/team-members/${member.name}.png`} className='team-image' />
+                      <img src={`/team-members/${member.name}.jpeg`} className='team-image' />
                     </motion.div>
                   </Grid>
                   <Grid xs={10} lg={5} display="flex-col" justifyContent={{ xs: "center", lg: "flex-end" }}>

@@ -1,6 +1,12 @@
 .pageHeader {
     width: 100%;
-    height: 60vh;
+    height: 63vh;
+    background-color: #032e63;
+}
+
+.leaderShipPageHeader{
+    width: 100%;
+    height: 50vh;
     background-color: #032e63;
 }
 

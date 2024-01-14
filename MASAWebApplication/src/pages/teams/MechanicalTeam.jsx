@@ -28,9 +28,9 @@ function MechanicalTeam({ team }) {
                 >
                     <Grid container spacing={0} justifyContent="center" alignItems="center">
                         <Grid xs={11} lg={12} display="flex" justifyContent="center" alignItems={'center'}>
-                            <PrecisionManufacturingIcon sx={{ typography: { xs: 'h6', lg: 'h3', margin: "140px 10px 30px auto" } }} className='page-title'
+                            <PrecisionManufacturingIcon sx={{ typography: { xs: 'h6', lg: 'h3', margin: "110px 10px 30px auto" } }} className='page-title'
                             />
-                            <Typography sx={{ typography: { xs: 'h6', lg: 'h3', margin: "140px auto 30px 10px" } }} className='page-title heading'
+                            <Typography sx={{ typography: { xs: 'h6', lg: 'h3', margin: "110px auto 30px 10px" } }} className='page-title heading'
                                 component={motion.div}
                                 variants={fadeAnimation}
                                 initial="hidden"
@@ -50,7 +50,7 @@ function MechanicalTeam({ team }) {
                                 >
                                     {TeamsData[team].description}</Typography>
                             </Grid>
-                            <Grid xs={11} lg={3} display="flex-col" justifyContent="center">
+                            <Grid xs={11} lg={4} display="flex-col" justifyContent="center">
                                 <motion.div
                                     style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
                                     variants={fadeAnimation}
@@ -58,7 +58,7 @@ function MechanicalTeam({ team }) {
                                     whileInView="visible"
                                     viewport={{ once: true }}
                                 >
-                                    <img src={`/team-members/${TeamsData[team].leadName}.png`} className='team-header-image' />
+                                    <img src={`/team-members/${TeamsData[team].leadName}.jpeg`} className='team-header-image' />
                                 </motion.div>
                                 <motion.div
                                     style={{ display: "flex", justifyContent: "center", alignItems: "center" }}

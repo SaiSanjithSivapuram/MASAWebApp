@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router';
 import MediaCarousel from '../../component/media_carousel/MediaCarousel';
 import "./Home.css";
 import { SocialMediaData } from '../../data/SocialMediaData';
+import { Link as ScrollLink } from 'react-scroll';
 const InstagramCarousel = lazy(() => import('../../component/instagram_carousel/InstagramCarousel'));
 const LinkedinCarousel = lazy(() => import('../../component/linkedin_carousel/LinkedinCarousel'));
 
@@ -176,33 +177,35 @@ function HomePage() {
             </Grid>
             <Grid container spacing={0} justifyContent="center">
               <Grid xs={12} display="flex" justifyContent="center">
-                <Button
-                  edge="start"
-                  className='launch-btn'
-                  startIcon={<MemoryIcon />}
-                  variant='outlined'
-                  component={motion.div}
-                  whileHover={{
-                    scale: 1.15,
-                    transition: { duration: 0.3 },
-                  }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <Typography variant='p' className='header-title'
+                <ScrollLink to='launch' spy={true} smooth={true}>
+                  <Button
+                    edge="start"
+                    className='launch-btn'
+                    startIcon={<MemoryIcon />}
+                    variant='outlined'
                     component={motion.div}
-                    variants={slideLeftAnimation}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
+                    whileHover={{
+                      scale: 1.15,
+                      transition: { duration: 0.3 },
+                    }}
+                    whileTap={{ scale: 0.9 }}
                   >
-                    LAUNCH</Typography>
-                </Button>
+                    <Typography variant='p' className='header-title'
+                      component={motion.div}
+                      variants={slideLeftAnimation}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                    >
+                      LAUNCH</Typography>
+                  </Button>
+                </ScrollLink>
               </Grid>
             </Grid>
           </motion.div>
         </AnimatePresence>
       </div>
-      <div>
+      <div id='launch' style={{ paddingTop: "20px" }}>
         <Grid container spacing={0} justifyContent="center">
           <Grid xs={12} lg={6} display="flex" justifyContent={{ xs: "center", lg: "flex-end" }}>
             <Typography id='homeHeader' sx={{ typography: { md: 'h4', xs: 'h6' } }} className='intro-title title2'
@@ -421,7 +424,7 @@ function HomePage() {
                         <CardMedia
                           component="img"
                           height="290"
-                          image={`/team-members/${member.name}.png`}
+                          image={`/team-members/${member.name}.jpeg`}
                           alt={member.name}
                         />
                         <CardContent>
@@ -474,15 +477,15 @@ function HomePage() {
           </Grid>
         </Grid> */}
         <Grid container spacing={0} justifyContent="center">
-          <Grid xs={12} lg={4} display="flex" justifyContent={{ xs: "center", md: "center" }}>
+          <Grid xs={11} display="flex" justifyContent={{ xs: "center", md: "center" }}>
             <InstagramCarousel items={SocialMediaData['instagram1']} />
           </Grid>
-          <Grid xs={12} lg={4} display="flex" justifyContent={{ xs: "center", md: "center" }}>
+          {/* <Grid xs={12} lg={4} display="flex" justifyContent={{ xs: "center", md: "center" }}>
             <InstagramCarousel items={SocialMediaData['instagram2']} />
           </Grid>
           <Grid xs={12} lg={4} display="flex" justifyContent="center">
             <MediaCarousel />
-          </Grid>
+          </Grid> */}
         </Grid>
       </div>
     </div >
