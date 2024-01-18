@@ -2,6 +2,7 @@ import { lazy } from "react";
 import Teams from "../../pages/teams/Teams";
 const HomePage = lazy(() => import("../../pages/home/HomePage"));
 const AboutPage = lazy(() => import("../../pages/about/AboutPage"));
+const ComingSoon =  lazy(() => import("../../pages/comingSoon/ComingSoon"));
 
 const routeConfig = [
     {
@@ -11,15 +12,14 @@ const routeConfig = [
         element: <HomePage />
     },
     {
-        path: "/aboutus",
-        exact: true,
-        headerContent: true,
-        element: <AboutPage />,
-    },
-    {
         path: "/aboutus/:team",
         headerContent: true,
         element: <Teams />
+    },
+    {
+        path: "/projects",
+        headerContent: true,
+        element: <ComingSoon />
     }
 ]
 

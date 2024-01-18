@@ -172,7 +172,7 @@ function HomePage() {
             </Grid>
             <Grid container spacing={0} justifyContent="center">
               <Grid xs={12} display="flex" justifyContent="center">
-                <Typography sx={{ typography: { md: 'h2', xs: 'h5' } }} color="white" className='main-title'>REACHING FOR THE STARS...</Typography>
+                <Typography sx={{ typography: { xs: 'h5', md: 'h2', lg: 'h2' } }} color="white" className='main-title'>FROM DESIGN TO APOGEE</Typography>
               </Grid>
             </Grid>
             <Grid container spacing={0} justifyContent="center">
@@ -190,7 +190,7 @@ function HomePage() {
                     }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    <Typography variant='p' className='header-title'
+                    <Typography variant='p' fontSize={"16px"} className='header-title'
                       component={motion.div}
                       variants={slideLeftAnimation}
                       initial="hidden"
@@ -244,7 +244,7 @@ function HomePage() {
               ASSOCIATION</Typography>
           </Grid>
           <Grid xs={11} display="flex" justifyContent="center">
-            <Typography sx={{ typography: { md: 'p', xs: 'p' } }} className='intro-description'
+            <Typography sx={{ typography: { md: 'p', xs: 'p' }, fontSize: '18px' }} className='intro-description'
               component={motion.div}
               variants={slideRightAnimation}
               initial="hidden"
@@ -273,7 +273,7 @@ function HomePage() {
               href='https://youtu.be/XFDlKn3lNmc?si=UL_sxb5gt2ckBhJo'
               target='blank'
             >
-              <Typography variant='p' className='header-title'
+              <Typography variant='p' fontSize={"16px"} className='header-title'
                 component={motion.div}
                 variants={slideLeftAnimation}
                 initial="hidden"
@@ -367,7 +367,7 @@ function HomePage() {
                         variant='outlined'
                         component={motion.div}
                       >
-                        <Typography variant='p' className='header-title'
+                        <Typography variant='p' fontSize={"16px"} className='header-title'
                           component={motion.div}
                           variants={slideLeftAnimation}
                           initial="hidden"
@@ -407,7 +407,7 @@ function HomePage() {
             </Grid>
             {LeadTeamData.map((member, index) => {
               return (
-                <Grid xs={12} lg={3} display="flex" justifyContent="center">
+                <Grid xs={12} md={5} lg={3} display="flex" justifyContent="center">
                   <Card sx={{ width: 300, position: "relative" }} className='core-team-card'
                     component={motion.li}
                     variants={cardAnimation}
@@ -430,7 +430,7 @@ function HomePage() {
                         <CardContent>
                           <Grid container spacing={0} justifyContent="center" style={{ position: 'absolute', bottom: 125 }}>
                             <Grid xs={12} display="flex" justifyContent="flex-start">
-                              <Typography variant="h5" component="div" color="white" className='core-team-card-content'>
+                              <Typography variant="h5" component="div" color="white" className='core-team-card-content team-name'>
                                 {member.name.toUpperCase()}
                               </Typography>
                             </Grid>

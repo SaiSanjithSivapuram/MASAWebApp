@@ -5,7 +5,6 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Card, CardHeader, Grid, Typography } from '@mui/material'
 import { motion } from 'framer-motion';
 import "./InstagramCarousel.css";
-import { useNavigate } from 'react-router';
 const Carousel = lazy(() => import('react-material-ui-carousel'));
 
 function InstagramCarousel({ items }) {
@@ -49,23 +48,28 @@ function InstagramCarousel({ items }) {
                             return (
                                 <a href={item.url} key={i} target='blank' className='instagram-card-content'>
                                     <Grid container spacing={0} justifyContent="center">
-                                        <Grid xs={11} sx={{ display: {xs: "block", lg: "none"} }} display="flex" justifyContent="center">
+                                        <Grid xs={11} sx={{ display: {xs: "block", md: "none", lg: "none"} }} display="flex" justifyContent="center">
                                             <div className='social-image'>
                                                 <img src={item.imageUrl} width={"100%"} height={"auto"} style={{ borderRadius: "20px" }} />
                                             </div>
                                         </Grid>
-                                        <Grid lg={5} sx={{ display: {xs: "none", lg: "block"} }} display="flex" justifyContent="center">
+                                        <Grid md={8} sx={{ display: {xs: "none", md: "block", lg: "none"} }} display="flex" justifyContent="center">
+                                            <div className='social-image'>
+                                                <img src={item.imageUrl} width={"100%"} height={"auto"} style={{ borderRadius: "20px"}} />
+                                            </div>
+                                        </Grid>
+                                        <Grid lg={5} sx={{ display: {xs: "none", md: "none", lg: "block"} }} display="flex" justifyContent="center">
                                             <div className='social-image'>
                                                 <img src={item.imageUrl} width={"80%"} height={"auto"} style={{ borderRadius: "20px"}} />
                                             </div>
                                         </Grid>
-                                        <Grid xs={12} sx={{ display: {xs: "block", lg: "none"} }} display="flex" justifyContent="center">
+                                        <Grid xs={12} sx={{ display: {xs: "block", md: "block", lg: "none"} }} display="flex" justifyContent="center">
                                             <div className='social-content'>
                                                 <Typography key={i} sx={{ display: "flex", alignItems: "center", margin: "10px 0px" }}><FavoriteIcon sx={{ marginRight: "6px" }} /> {item.likes}</Typography>
                                                 <Typography key={i} >{item.postText.slice(0,100) + "..."}</Typography>
                                             </div>
                                         </Grid>
-                                         <Grid lg={5} sx={{ display: {xs: "none", lg: "block"} }} display="flex" justifyContent="center">
+                                         <Grid lg={5} sx={{ display: {xs: "none", md: "none", lg: "block"} }} display="flex" justifyContent="center">
                                             <div className='social-content'>
                                                 <Typography key={i} sx={{ display: "flex", alignItems: "center", margin: "10px 0px" }}><FavoriteIcon sx={{ marginRight: "6px" }} /> {item.likes}</Typography>
                                                 <Typography key={i} >{item.postText}</Typography>

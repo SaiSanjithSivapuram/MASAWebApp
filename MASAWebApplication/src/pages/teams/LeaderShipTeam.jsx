@@ -56,9 +56,7 @@ function LeadershipTeamPage({ team }) {
         >
           <Grid container spacing={0} justifyContent="center" alignItems="center">
             <Grid xs={11} lg={12} display="flex" justifyContent="center" alignItems={'center'}>
-              <Groups2Icon sx={{ typography: { xs: 'h6', lg: 'h3', margin: "140px 10px 30px auto" } }} className='page-title'
-              />
-              <Typography sx={{ typography: { xs: 'h6', lg: 'h3', margin: "140px auto 30px 10px" } }} className='page-title heading'
+              <Typography sx={{ typography: { xs: 'p', md: 'h4', lg: 'h4' }, margin: "30px" }} className='page-title heading'
                 component={motion.div}
                 variants={fadeAnimation}
                 initial="hidden"
@@ -68,12 +66,14 @@ function LeadershipTeamPage({ team }) {
                 {TeamsData[team].organization.toUpperCase()}</Typography>
             </Grid>
             <Grid xs={9} display="flex" justifyContent="center">
-              <Typography sx={{ typography: 'p' }} className='page-title'
+              <Typography className='page-title description'
+                sx={{ marginBottom: { xs: "30px" }, fontSize: "18px" }}
                 component={motion.div}
                 variants={fadeAnimation}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
+                variant='p'
               >
                 {TeamsData[team].description}</Typography>
             </Grid>
@@ -104,7 +104,7 @@ function LeadershipTeamPage({ team }) {
                   </Grid>
                   <Grid xs={10} lg={5} display="flex-col" justifyContent={{ xs: "center", lg: "flex-end" }}>
                     <Grid xs={12} lg={12} display="flex" justifyContent={{ xs: "center", lg: "flex-start" }}>
-                      <Typography sx={{ typography: { xs: 'h6' } }} className='card-title'
+                      <Typography sx={{ typography: { xs: 'h5' } }} className='card-title'
                         component={motion.div}
                         variants={slideLeftAnimation}
                         initial="hidden"
@@ -114,7 +114,7 @@ function LeadershipTeamPage({ team }) {
                         {member.name.toUpperCase()}</Typography>
                     </Grid>
                     <Grid xs={12} lg={12} display="flex" justifyContent={{ xs: "center", lg: "flex-start" }}>
-                      <Typography sx={{ typography: { xs: 'p' }, marginBotton: "10px" }} className='card-title'
+                      <Typography sx={{ typography: { xs: 'h6' }, marginBotton: "10px" }} className='card-title'
                         component={motion.div}
                         variants={slideLeftAnimation}
                         initial="hidden"
@@ -124,7 +124,7 @@ function LeadershipTeamPage({ team }) {
                         {member.organization.toUpperCase()} TEAM</Typography>
                     </Grid>
                     <Grid xs={12} lg={12} display="flex" justifyContent={{ xs: "center", lg: "flex-start" }}>
-                      <Typography sx={{ typography: { md: 'p', xs: 'p' } }} className='intro-description'
+                      <Typography sx={{ typography: { xs: 'p', md: 'p', lg: 'p' }, fontSize: "18px" }} className='intro-description'
                         component={motion.div}
                         variants={slideLeftAnimation}
                         initial="hidden"
