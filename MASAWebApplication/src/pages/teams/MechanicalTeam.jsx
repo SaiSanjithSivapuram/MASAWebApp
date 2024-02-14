@@ -1,6 +1,6 @@
 import React from 'react'
 import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
-import { Grid, Typography } from '@mui/material';
+import { Card, CardContent, CardHeader, Grid, Typography } from '@mui/material';
 import { TeamsData } from '../../data/TeamsData';
 import { motion } from 'framer-motion';
 import "./teams.css";
@@ -83,6 +83,87 @@ function MechanicalTeam({ team }) {
                 </motion.div>
             </div>
             <div>
+                <Grid container spacing={0} display="flex" justifyContent="center">
+                    <Card className="projectDetailCard" sx={{ margin: "20px auto", width: "92%" }}
+                        component={motion.div}
+                        initial={{ y: 20, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        viewport={{ once: true }}
+                    >
+                        <CardHeader className='projectDetailCardTitle' title={
+                            <Grid container spacing={0} display="flex" justifyContent="center">
+                                <Grid xs={12} md={11.45} lg={11.45} display="flex" justifyContent={{ xs: "center", md: "flex-start", lg: "flex-start" }}>
+                                    <Typography variant="h5" component="div" className='teamCardTitle'>
+                                        PAYLOAD
+                                    </Typography>
+                                </Grid>
+                            </Grid>
+                        } />
+                        <CardContent>
+                            <Grid container spacing={0} display="flex" justifyContent="center">
+                                <Grid xs={12} display="flex" justifyContent="flex-start">
+                                    <Typography variant="body1" component="div" className='teamCardDescription'>
+                                        On the mechanical side this team will handle creating the bulkheads of the payload that electrical will populate. Payload’s main concern is the payload frame and board mounts. Previous years frames and mounts have housed projects that include strain gauges, chemical valve testing, and an electrical gyroscopic data collection. On this team you will learn important design and manufacturing principles, such as load analysis, material analysis, and CAD assembleming to name a few.
+                                    </Typography>
+                                </Grid>
+                            </Grid>
+                        </CardContent>
+                    </Card>
+                </Grid>
+                <Grid container spacing={0} display="flex" justifyContent="center">
+                    <Card className="projectDetailCard" sx={{ margin: "20px auto", width: "92%" }}
+                        component={motion.div}
+                        initial={{ y: 20, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        viewport={{ once: true }}
+                    >
+                        <CardHeader className='projectDetailCardTitle' title={
+                            <Grid container spacing={0} display="flex" justifyContent="center">
+                                <Grid xs={12} md={11.45} lg={11.45} display="flex" justifyContent={{ xs: "center", md: "flex-start", lg: "flex-start" }}>
+                                    <Typography variant="h5" component="div" className='teamCardTitle'>
+                                        RECOVERY
+                                    </Typography>
+                                </Grid>
+                            </Grid>
+                        } />
+                        <CardContent>
+                            <Grid container spacing={0} display="flex" justifyContent="center">
+                                <Grid xs={12} display="flex" justifyContent="flex-start">
+                                    <Typography variant="body1" component="div" className='teamCardDescription'>
+                                        This team's main concern is to be able to recover a pristine rocket once it has landed. Mechanical recovery projects typically include designing, analyzing, and manufacturing the parachutes and avionics bays. On this team you will learn the mechanics of parachutes, shock cords, and ejection charges. Gained skills include sewing, CAD modeling, gord analysis, and mass balance
+                                    </Typography>
+                                </Grid>
+                            </Grid>
+                        </CardContent>
+                    </Card>
+                </Grid>
+                <Grid container spacing={0} display="flex" justifyContent="center">
+                    <Card className="projectDetailCard" sx={{ margin: "20px auto", width: "92%" }}
+                        component={motion.div}
+                        initial={{ y: 20, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        viewport={{ once: true }}
+                    >
+                        <CardHeader className='projectDetailCardTitle' title={
+                            <Grid container spacing={0} display="flex" justifyContent="center">
+                                <Grid xs={12} md={11.45} lg={11.45} display="flex" justifyContent={{ xs: "center", md: "flex-start", lg: "flex-start" }}>
+                                    <Typography variant="h5" component="div" className='teamCardTitle'>
+                                        AIRFRAME AND PROPULSION
+                                    </Typography>
+                                </Grid>
+                            </Grid>
+                        } />
+                        <CardContent>
+                            <Grid container spacing={0} display="flex" justifyContent="center">
+                                <Grid xs={12} display="flex" justifyContent="flex-start">
+                                    <Typography variant="body1" component="div" className='teamCardDescription'>
+                                        This team will work alongside all subgroups, both mechanical and electrical, to house everything. They also have their own team projects, such as the air brakes, fins, and camera shrouds. This team is a vital necessity to the success of the team. Skills that are used daily on this team are Solidworks and Openrocket modeling, milling, composite manufacturing, and CFD analysis.
+                                    </Typography>
+                                </Grid>
+                            </Grid>
+                        </CardContent>
+                    </Card>
+                </Grid>
             </div>
         </div>
     )

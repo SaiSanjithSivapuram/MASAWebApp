@@ -23,7 +23,7 @@ function InstagramCarousel({ items }) {
 
     return (
         <div>
-            <Card sx={{ width: "92vw", height:"80vh" }}
+            <Card sx={{ width: "93vw", height:"80vh" }}
                 component={motion.div}
                 variants={fadeAnimation}
                 initial="hidden"

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Divider, Grid, IconButton, Typography, Button } from '@mui/material'
+import { Divider, Grid, IconButton, Typography, Button, Tooltip } from '@mui/material'
 import { motion } from 'framer-motion';
 import EmailIcon from '@mui/icons-material/Email';
 import InfoIcon from '@mui/icons-material/Info';
@@ -121,7 +121,7 @@ function LeadershipTeamPage({ team }) {
                         whileInView="visible"
                         viewport={{ once: true }}
                       >
-                        {member.organization.toUpperCase()} TEAM</Typography>
+                        {member.organization.toUpperCase()}</Typography>
                     </Grid>
                     <Grid xs={12} lg={12} display="flex" justifyContent={{ xs: "center", lg: "flex-start" }}>
                       <Typography sx={{ typography: { xs: 'p', md: 'p', lg: 'p' }, fontSize: "18px" }} className='intro-description'
@@ -134,7 +134,7 @@ function LeadershipTeamPage({ team }) {
                         {member.description}</Typography>
                     </Grid>
                     <Grid xs={12} lg={12} display="flex" justifyContent={{ xs: "center", lg: "space-around" }} sx={{ margin: "20px auto" }}>
-                      <Grid xs={4} display="flex" justifyContent="center">
+                      <Grid xs={4} display="flex" justifyContent={{ xs: "center", lg: "flex-start" }}>
                         <IconButton className='contactIcon'
                           component={motion.a}
                           variants={slideLeftAnimation}
@@ -151,8 +151,8 @@ function LeadershipTeamPage({ team }) {
                           <EmailIcon />
                         </IconButton>
                       </Grid>
-                      <Grid xs={4} display="flex" justifyContent="center">
-                        <IconButton className='contactIcon'
+                      <Grid xs={4} display="flex" justifyContent={{ xs: "center", lg: "flex-start" }}>
+                        {member.linkedin != '' && <IconButton className='contactIcon'
                           component={motion.a}
                           variants={slideLeftAnimation}
                           initial="hidden"
@@ -166,24 +166,28 @@ function LeadershipTeamPage({ team }) {
                           target='blank'
                         >
                           <LinkedInIcon />
-                        </IconButton>
+                        </IconButton>}
                       </Grid>
-                      {member.url != '/aboutus/leadership-team' && <Grid xs={4} display="flex" justifyContent="center">
-                        <IconButton className='contactIcon'
-                          component={motion.a}
-                          variants={slideLeftAnimation}
-                          initial="hidden"
-                          whileInView="visible"
-                          whileHover={{
-                            scale: 1.15,
-                            transition: { duration: 0.3 },
-                          }}
-                          viewport={{ once: true }}
-                          href={member.url}
-                        >
-                          <InfoIcon />
-                        </IconButton>
-                      </Grid>}
+                      <Grid xs={4} display="flex" justifyContent={{ xs: "center", lg: "flex-start" }}>
+                        {member.url != '/aboutus/leadership-team' && (
+                          <Tooltip title="Click for more information" placement="bottom">
+                            <IconButton className='contactIcon'
+                              component={motion.a}
+                              variants={slideLeftAnimation}
+                              initial="hidden"
+                              whileInView="visible"
+                              whileHover={{
+                                scale: 1.15,
+                                transition: { duration: 0.3 },
+                              }}
+                              viewport={{ once: true }}
+                              href={member.url}
+                            >
+                              <InfoIcon />
+                            </IconButton>
+                          </Tooltip>
+                        )}
+                      </Grid>
                     </Grid>
                   </Grid>
                 </Grid>

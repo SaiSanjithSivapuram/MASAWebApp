@@ -10,7 +10,7 @@ export const TeamsData = {
     },
     "mechanical-team": {
       leadName: "Bruna",
-      fullName: "Bruna Osaka Rocha",
+      fullName: "Bruna Osako Rocha",
       organization: "Mechanical Team",
       description: "Under the leadership of Bruna Rocha, the mechanical team is effectively organized into three distinct subteams: Payload, Recovery, and Airframe & Propulsion. Annually, the team dedicates itself to meticulous preparations, involving extensive activities in rocket design and manufacturing. This systematic approach guarantees a thorough and well-executed execution of their responsibilities. Notably, for the upcoming rocket project, we have chosen the N5800 propulsion system, and the configuration will feature a streamlined one-stage design, reflecting our strategic choices for this year's mission.",
       team: []

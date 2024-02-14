@@ -1,0 +1,105 @@
+.projectsPageHeader {
+    padding-top: 120px !important;
+    padding-bottom: 30px !important;
+}
+
+.projectsInput {
+    padding: 14px 16px;
+    border-radius: 15px;
+    background-color: white !important;
+}
+
+.projectInputBtn {
+    margin: 0px !important;
+    padding: 6px !important;
+    color: #032e63 !important;
+}
+
+.projectsPageContent {
+    display: flex !important;
+    justify-content: center !important;
+    margin: 0px auto !important;
+    width: 92.5% !important;
+}
+
+.dashboard {
+    overflow-y: scroll;
+    height: 70vh;
+}
+
+.projectCard {
+    padding: 12px 16px !important;
+    border-radius: 15px !important;
+    cursor: pointer;
+}
+
+.projectCard:hover {
+    background-color: #032e63;
+    transition: 0.2s ease-in;
+}
+
+.projectCardTitle {
+    color: #032e63;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+.projectCard:hover .projectCardTitle {
+    color: #FFCF06;
+    transition: 0.2s ease-in;
+}
+
+.projectCard:hover .projectCardDescription {
+    color: #FFCF06 !important;
+    transition: 0.2s ease-in;
+}
+
+.projectCardIcon {
+    color: #032e63;
+}
+
+.projectCard:hover .projectCardIcon {
+    color: #FFCF06;
+    transition: 0.2s ease-in;
+}
+
+/* Project Detials Styling */
+
+.projectsDetailsPageHeader {
+    padding-top: 120px !important;
+    padding-bottom: 30px !important;
+    background-color: #032e63;
+}
+
+.projectHeaderDescription {
+    color: #FFCF06 !important;
+    padding: 12px 16px;
+    font-size: 18.5px !important;
+    font-weight: 600 !important;
+}
+
+.projectsHighliter {
+    background-color: #FFCF06;
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: 15px;
+}
+
+.projectDetailCard {
+    padding: 0px 0px !important;
+    margin: 10px auto !important;
+    border-radius: 15px !important;
+}
+
+.projectCardDescription {
+    color: #032e63 !important;
+    padding: 12px 16px;
+    font-size: 18.5px !important;
+    font-weight: 600 !important;
+}
+
+.projectDetailCardTitle {
+    background: #FFCF06 !important;
+    padding: 20px 0px !important;
+}

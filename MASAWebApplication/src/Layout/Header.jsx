@@ -2,10 +2,6 @@ import React, { useEffect, useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import { useDispatch } from 'react-redux';
-import { openDialog } from './store/layoutSlice';
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import { Grid, Typography } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router';
@@ -79,8 +75,8 @@ function Header() {
           <Grid container spacing={0} justifyContent="center" alignItems={"center"}>
             <Grid xs={1} display="flex" justifyContent="flex-start">
               {toggle ?
-                <img src='/icons/MASA Logo Color.svg' className='navBrandLogo' width={150} /> :
-                <img src='/icons/MASA Logo White.svg' className='navBrandLogo' width={150} />}
+                <img src='/icons/MASA Logo Color.svg' className='navBrandLogo' width={150} onClick={() => navigate("/")} style={{ cursor: "pointer" }} /> :
+                <img src='/icons/MASA Logo White.svg' className='navBrandLogo' width={150} onClick={() => navigate("/")} style={{ cursor: "pointer" }} />}
             </Grid>
             <Grid xs={11} display="flex" justifyContent="flex-end">
               {navigationConfig.map((menuItem, index) =>

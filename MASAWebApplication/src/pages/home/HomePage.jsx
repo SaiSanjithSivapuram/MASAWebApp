@@ -1,5 +1,5 @@
 import React, { lazy } from 'react'
-import { Button, Card, CardActionArea, CardContent, CardHeader, CardMedia, Grid, Icon, Typography } from '@mui/material'
+import { Button, Card, CardActionArea, CardActions, CardContent, CardHeader, CardMedia, Grid, Icon, Typography } from '@mui/material'
 import CorporateFareIcon from '@mui/icons-material/CorporateFare';
 import DescriptionIcon from '@mui/icons-material/Description';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -8,12 +8,10 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import Countdown from 'react-countdown';
 import { LeadTeamData } from '../../data/LeadTeamData';
 import { useNavigate } from 'react-router';
-import MediaCarousel from '../../component/media_carousel/MediaCarousel';
 import "./Home.css";
 import { SocialMediaData } from '../../data/SocialMediaData';
 import { Link as ScrollLink } from 'react-scroll';
 const InstagramCarousel = lazy(() => import('../../component/instagram_carousel/InstagramCarousel'));
-const LinkedinCarousel = lazy(() => import('../../component/linkedin_carousel/LinkedinCarousel'));
 
 function HomePage() {
 
@@ -158,7 +156,7 @@ function HomePage() {
 
   return (
     <div>
-      <div className='main-img' style={{ backgroundImage: "linear-gradient(rgba(3, 46, 99, 0.4), rgba(3, 46, 99, 0.4)), url('/MASAMainBg.jpeg')" }}>
+      <div className='main-img' style={{ backgroundImage: "linear-gradient(rgba(3, 46, 99, 0.7), rgba(3, 46, 99, 0.2)), url('/MASAMainBg.jpeg')" }}>
         <AnimatePresence>
           <motion.div
             initial={{ opacity: 0 }}
@@ -172,12 +170,12 @@ function HomePage() {
             </Grid>
             <Grid container spacing={0} justifyContent="center">
               <Grid xs={12} display="flex" justifyContent="center">
-                <Typography sx={{ typography: { xs: 'h5', md: 'h2', lg: 'h2' } }} color="white" className='main-title'>FROM DESIGN TO APOGEE</Typography>
+                <Typography sx={{ typography: { xs: 'h5', md: 'h3', lg: 'h3' } }} color="white" className='main-title'>FROM DESIGN TO APOGEE</Typography>
               </Grid>
             </Grid>
             <Grid container spacing={0} justifyContent="center">
               <Grid xs={12} display="flex" justifyContent="center">
-                <ScrollLink to='launch' spy={true} smooth={true}>
+                <ScrollLink to='launch' spy={true} smooth={true} delay={100} offset={-90}>
                   <Button
                     edge="start"
                     className='launch-btn'
@@ -206,89 +204,84 @@ function HomePage() {
         </AnimatePresence>
       </div>
       <div id='launch' style={{ paddingTop: "20px" }}>
-        <Grid container spacing={0} justifyContent="center">
-          <Grid xs={12} lg={6} display="flex" justifyContent={{ xs: "center", lg: "flex-end" }}>
-            <Typography id='homeHeader' sx={{ typography: { md: 'h4', xs: 'h6' } }} className='intro-title title2'
-              component={motion.div}
-              variants={slideLeftAnimation}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              MICHIGAN</Typography>
-            <Typography id='homeHeader' sx={{ typography: { md: 'h4', xs: 'h6' } }} className='intro-title title1'
-              component={motion.div}
-              variants={slideLeftAnimation}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              AERONAUTICAL</Typography>
-          </Grid>
-          <Grid xs={12} lg={5} display="flex" justifyContent={{ xs: "center", lg: "flex-start" }}>
-            <Typography id='homeHeader' sx={{ typography: { md: 'h4', xs: 'h6' } }} className='intro-title title1'
-              component={motion.div}
-              variants={slideLeftAnimation}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              SCIENCE</Typography>
-            <Typography id='homeHeader' sx={{ typography: { md: 'h4', xs: 'h6' } }} className='intro-title title2'
-              component={motion.div}
-              variants={slideLeftAnimation}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              ASSOCIATION</Typography>
-          </Grid>
-          <Grid xs={11} display="flex" justifyContent="center">
-            <Typography sx={{ typography: { md: 'p', xs: 'p' }, fontSize: '18px' }} className='intro-description'
-              component={motion.div}
-              variants={slideRightAnimation}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              Welcome to the official website of the Michigan Aeronautical Science Association-Dearborn.
-              MASA-Dearborn is a rocketry team at the University of Michigan-Dearborn made up of engineering, science, arts, and business students who work together to build an innovative high powered rocket. The group was founded in 2015 with the goal of being an avenue for students to learn about rocketry and apply their theoretical knowledge to a real life technical project. Each year the group competes at the Spaceport America Cup in Las Cruces, New Mexico where they attempt to launch a rocket to 30,000ft. We implore you to browse through our website to learn about MASA-Dearborn and experimental rocketry.</Typography>
-          </Grid>
-          <Grid xs={12} display="flex" justifyContent="center">
-            <Button
-              edge="start"
-              className='page-btn'
-              startIcon={<YouTubeIcon />}
-              variant='outlined'
-              component={motion.a}
-              variants={slideLeftAnimation}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              whileHover={{
-                scale: 1.15,
-                transition: { duration: 0.3 },
-              }}
-              whileTap={{ scale: 0.9 }}
-              href='https://youtu.be/XFDlKn3lNmc?si=UL_sxb5gt2ckBhJo'
-              target='blank'
-            >
-              <Typography variant='p' fontSize={"16px"} className='header-title'
-                component={motion.div}
-                variants={slideLeftAnimation}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-              >
-                Watch Our Feature Video</Typography>
-            </Button>
-          </Grid>
-        </Grid>
-      </div>
-      <div className='sponsers-content' style={{ width: "96vw", margin: "10px auto" }}>
         <motion.div
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          whileInView={{ opacity: 1, transition: { delay: 0.4 } }}
+          viewport={{ once: true }}
+        >
+          <Grid container spacing={0} justifyContent="center">
+            <Grid xs={12} display="flex" justifyContent="center">
+              <Card className='sponsers-card' sx={{ margin: "20px auto", width: "92%" }}
+                component={motion.div}
+                whileHover={{ scale: 1.02 }}
+              >
+                <CardHeader className='intro-header' title={
+                  <Grid container spacing={0} display="flex" justifyContent="center">
+                    <Grid xs={12} lg={12} display="flex" justifyContent="center">
+                      <Typography id='homeHeader' variant='p' fontSize={{ xs: "12px", md: "30px", lg: "40px" }} className='intro-title title2'
+                        component={motion.div}
+                        variants={slideLeftAnimation}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                      >
+                        MICHIGAN AERONAUTICAL SCIENCE ASSOCIATION</Typography>
+                    </Grid>
+                  </Grid>
+                } />
+                <CardContent>
+                  <Grid container spacing={0} justifyContent="center" alignItems="center">
+                    <Grid xs={12} display="flex" justifyContent="center">
+                      <Typography sx={{ typography: { md: 'p', xs: 'p' }, fontSize: '18px', textAlign: "justify" }} className='intro-description'
+                        component={motion.div}
+                        variants={slideRightAnimation}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                      >
+                        Welcome to the official website of the Michigan Aeronautical Science Association-Dearborn. MASA-Dearborn is a rocketry team at the University of Michigan-Dearborn made up of engineering, science, arts, and business students who work together to build an innovative high powered rocket. The group was founded in 2015 with the goal of being an avenue for students to learn about rocketry and apply their theoretical knowledge to a real life technical project. Each year the group competes at the Spaceport America Cup in Las Cruces, New Mexico where they attempt to launch a rocket to 30,000ft. We implore you to browse through our website to learn about MASA-Dearborn and experimental rocketry.</Typography>
+                    </Grid>
+                  </Grid>
+                </CardContent>
+                <CardActions>
+                  <Grid container spacing={0} justifyContent="center" alignItems="center">
+                    <Grid xs={12} display="flex" justifyContent="center">
+                      <Button
+                        fullWidth
+                        edge="start"
+                        className='page-btn'
+                        startIcon={<YouTubeIcon />}
+                        variant='outlined'
+                        component={motion.a}
+                        variants={slideLeftAnimation}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        whileTap={{ scale: 0.9 }}
+                        href='https://youtu.be/XFDlKn3lNmc?si=UL_sxb5gt2ckBhJo'
+                        target='blank'
+                      >
+                        <Typography variant='p' fontSize={"16px"} className='header-title'
+                          component={motion.div}
+                          variants={slideLeftAnimation}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: true }}
+                        >
+                          Watch Our Feature Video</Typography>
+                      </Button>
+                    </Grid>
+                  </Grid>
+                </CardActions>
+              </Card>
+            </Grid>
+          </Grid>
+        </motion.div>
+      </div>
+      <div className='sponsers-content' style={{ width: "96vw", margin: "0px auto" }}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, transition: { delay: 0.4 } }}
           viewport={{ once: true }}
         >
           <Grid container spacing={0} justifyContent="space-around">
@@ -313,23 +306,42 @@ function HomePage() {
                 } />
                 <CardContent>
                   <Grid container spacing={0} justifyContent="center" alignItems="center">
-                    <Grid xs={12} lg={4} display="flex" justifyContent="center">
-                      <img src='ford.png' width={"40%"} height={"90%"} />
+                    <Grid md={4} lg={4} justifyContent="center" sx={{ display: { xs: "none", md: "block flex", lg: "block flex" }, paddingTop: "20px" }}>
+                      <img src='umichcecs.png' width={"50%"} height={"90%"} />
                     </Grid>
-                    <Grid xs={12} lg={4} display="flex" justifyContent="center">
-                      <img src='umichcecs.png' width={"40%"} height={"90%"} />
+                    <Grid md={4} lg={4} justifyContent="center" sx={{ display: { xs: "none", md: "block flex", lg: "block flex" }, paddingTop: "20px" }}>
+                      <img src='bssolidworks.png' width={"70%"} height={"65%"} />
                     </Grid>
-                    <Grid xs={12} lg={4} display="flex" justifyContent="center">
-                      <img src='bssolidworks.png' width={"60%"} height={"65%"} />
+                    <Grid md={4} lg={4} justifyContent="center" sx={{ display: { xs: "none", md: "block flex", lg: "block flex" }, paddingTop: "20px" }}>
+                      <img src='Blue-Origin.png' width={"50%"} height={"90%"} />
                     </Grid>
-                    <Grid xs={12} lg={4} display="flex" justifyContent="center">
-                      <img src='patriot-tool.png' width={"45%"} height={"100%"} style={{ paddingTop: "10px" }} />
+                    <Grid md={4} lg={4} justifyContent="center" sx={{ display: { xs: "none", md: "block flex", lg: "block flex" }, paddingTop: "20px" }}>
+                      <img src='ford.png' width={"50%"} height={"90%"} />
                     </Grid>
-                    <Grid xs={12} lg={4} display="flex" justifyContent="center">
-                      <img src='hugnes.png' width={"60%"} height={"60%"} style={{ paddingTop: "10px" }} />
+                    <Grid md={4} lg={4} justifyContent="center" sx={{ display: { xs: "none", md: "block flex", lg: "block flex" }, paddingTop: "20px" }}>
+                      <img src='Magna.png' width={"60%"} height={"90%"} />
                     </Grid>
-                    <Grid xs={12} lg={4} display="flex" justifyContent="center">
-                      <img src='ansys.png' width={"40%"} height={"60%"} style={{ paddingTop: "10px" }} />
+                    <Grid md={4} lg={4} justifyContent="center" sx={{ display: { xs: "none", md: "block flex", lg: "block flex" }, paddingTop: "20px" }}>
+                      <Typography variant='p' className='sponsor-title'  >The Roussey Family</Typography>
+                    </Grid>
+
+                    <Grid xs={12} justifyContent="center" sx={{ display: { xs: "block flex", md: "none", lg: "none" }, paddingTop: { xs: "10px" } }}>
+                      <img src='umichcecs.png' width={"30%"} height={"90%"} />
+                    </Grid>
+                    <Grid xs={12} justifyContent="center" sx={{ display: { xs: "block flex", md: "none", lg: "none" }, paddingTop: { xs: "30px" } }}>
+                      <img src='bssolidworks.png' width={"40%"} height={"65%"} />
+                    </Grid>
+                    <Grid xs={12} justifyContent="center" sx={{ display: { xs: "block flex", md: "none", lg: "none" }, paddingTop: { xs: "40px" } }}>
+                      <img src='Blue-Origin.png' width={"30%"} height={"90%"} />
+                    </Grid>
+                    <Grid xs={12} justifyContent="center" sx={{ display: { xs: "block flex", md: "none", lg: "none" }, paddingTop: { xs: "50px" } }}>
+                      <img src='ford.png' width={"30%"} height={"90%"} />
+                    </Grid>
+                    <Grid xs={12} justifyContent="center" sx={{ display: { xs: "block flex", md: "none", lg: "none" }, paddingTop: { xs: "0px" } }}>
+                      <img src='Magna.png' width={"50%"} height={"90%"} />
+                    </Grid>
+                    <Grid xs={12} justifyContent="center" sx={{ display: { xs: "block flex", md: "none", lg: "none" }, paddingTop: { xs: "10px" } }}>
+                      <Typography variant='p' className='sponsor-title'  >The Roussey Family</Typography>
                     </Grid>
                   </Grid>
                 </CardContent>
@@ -358,7 +370,7 @@ function HomePage() {
                 <CardContent>
                   <Grid container spacing={0} justifyContent="center" alignItems="center">
                     <Grid xs={12} display="flex" justifyContent="center">
-                      <Countdown date={'2024-06-17T09:00:00'} renderer={timerRender} />
+                      <Countdown date={'2024-06-19T07:00:00'} renderer={timerRender} />
                     </Grid>
                     <Grid xs={12} display="flex" justifyContent="center">
                       <Button
@@ -390,92 +402,65 @@ function HomePage() {
           variants={cardBgAnimation}
           initial="hidden"
           whileInView="visible"
-          // whileHover={{ scale: 1.02 }}
-          // whileTap={{ scale: 0.98 }}
           viewport={{ once: true }}
         >
-          <Grid container spacing={0} justifyContent="center">
-            <Grid xs={12} display="flex" justifyContent="center">
-              <Typography sx={{ typography: { md: 'h3', xs: 'h5' } }} className='intro-title title2'
-                component={motion.div}
-                variants={slideLeftAnimation}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-              >
-                LEADERSHIP TEAM</Typography>
+          <CardHeader className='intro-title-team' title={
+            <Grid container spacing={0} justifyContent="center" className='intro-title'>
+              <Grid xs={12} display="flex" justifyContent="center">
+                <Typography sx={{ typography: { md: 'h3', xs: 'h5' } }} className='title1'
+                  component={motion.div}
+                  variants={slideLeftAnimation}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                >
+                  LEADERS</Typography>
+              </Grid>
             </Grid>
-            {LeadTeamData.map((member, index) => {
-              return (
-                <Grid xs={12} md={5} lg={3} display="flex" justifyContent="center">
-                  <Card sx={{ width: 300, position: "relative" }} className='core-team-card'
-                    component={motion.li}
-                    variants={cardAnimation}
-                    whileHover={{
-                      scale: 1.01,
-                      transition: { duration: 0.2, type: "tween" },
-                    }}
-                    whileTap={{ scale: 0.9 }}
-                    viewport={{ once: true }}
-                    onClick={() => { navigate(member.url) }}
-                  >
-                    <CardActionArea>
-                      <motion.div layout>
-                        <CardMedia
-                          component="img"
-                          height="290"
-                          image={`/team-members/${member.name}.jpeg`}
-                          alt={member.name}
-                        />
-                        <CardContent>
-                          <Grid container spacing={0} justifyContent="center" style={{ position: 'absolute', bottom: 125 }}>
-                            <Grid xs={12} display="flex" justifyContent="flex-start">
-                              <Typography variant="h5" component="div" color="white" className='core-team-card-content team-name'>
-                                {member.name.toUpperCase()}
-                              </Typography>
+          } />
+          <CardContent>
+            <Grid container spacing={0} justifyContent="center">
+              {LeadTeamData.map((member, index) => {
+                return (
+                  <Grid xs={12} md={5} lg={3} display="flex" justifyContent="center">
+                    <Card sx={{ width: 300, position: "relative" }} className='core-team-card'
+                      component={motion.li}
+                      variants={cardAnimation}
+                      whileTap={{ scale: 0.9 }}
+                      viewport={{ once: true }}
+                      onClick={() => { navigate(member.url) }}
+                      style={{ backgroundImage: `linear-gradient(rgba(3, 46, 99, 0), rgba(3, 46, 99, 0.45)), url(/team-members/${member.name}.jpeg)` }}
+                    >
+                      <CardActionArea>
+                        <motion.div layout>
+                          <CardContent style={{ position: 'absolute', bottom: -400 }} className='core-team-content'>
+                            <Grid container spacing={0} justifyContent="center">
+                              <Grid xs={12} display="flex" justifyContent="flex-start">
+                                <Typography variant="h5" component="div" color="white" className='core-team-card-content team-name'>
+                                  {member.name.toUpperCase()}
+                                </Typography>
+                              </Grid>
                             </Grid>
-                          </Grid>
-                          <Grid container spacing={0} justifyContent="center">
-                            <Grid xs={1.5} display="flex" justifyContent="flex-start">
-                              <Icon>
-                                <CorporateFareIcon />
-                              </Icon>
+                            <Grid container spacing={0} justifyContent="center">
+                              <Grid xs={12} display="flex" justifyContent="flex-start">
+                                <Typography gutterBottom variant="p" fontSize={"15px"} className='core-team-card-content org'>
+                                  {member.organization.toUpperCase()}
+                                </Typography>
+                              </Grid>
                             </Grid>
-                            <Grid xs={10.5} display="flex" justifyContent="flex-start">
-                              <Typography gutterBottom variant="body1" className='core-team-card-content org'>
-                                {member.organization.toUpperCase()}
-                              </Typography>
-                            </Grid>
-                          </Grid>
-                          <Grid container spacing={0} justifyContent="center">
-                            <Grid xs={1.5} display="flex" justifyContent="flex-start">
-                              <Icon>
-                                <DescriptionIcon />
-                              </Icon>
-                            </Grid>
-                            <Grid xs={10.5} display="flex" justifyContent="flex-start">
-                              <Typography variant="body1" className='core-team-card-content description'>
-                                {member.description.slice(0, 50) + "..."}
-                              </Typography>
-                            </Grid>
-                          </Grid>
-                        </CardContent>
-                      </motion.div>
-                    </CardActionArea>
-                  </Card>
-                </Grid>
-              )
-            })
-            }
-          </Grid>
+                          </CardContent>
+                        </motion.div>
+                      </CardActionArea>
+                    </Card>
+                  </Grid>
+                )
+              })
+              }
+            </Grid>
+          </CardContent>
         </Card>
       </div>
       <div className='social-media-content'>
-        {/* <Grid container spacing={0} justifyContent="center">
-          <Grid xs={12} display="flex" justifyContent="center">
-            <Typography sx={{ typography: { md: 'h4', xs: 'h5' } }} className='intro-title title1'>OUR SOCIAL</Typography>
-          </Grid>
-        </Grid> */}
         <Grid container spacing={0} justifyContent="center">
           <Grid xs={11} display="flex" justifyContent={{ xs: "center", md: "center" }}>
             <InstagramCarousel items={SocialMediaData['instagram1']} />
