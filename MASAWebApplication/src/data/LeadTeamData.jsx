@@ -1,34 +1,34 @@
 export const LeadTeamData = [
   {
-    name: "Andrey",
+    name: "Thomas",
     organization: "President",
-    description: "Andrey is currently a senior studying Mechanical Engineering. This is his fourth year on the team and first year as Team Officer. Andrey previously was the Airframe and Propulsion Lead and Airframe and Propulsion member. He is a Program Management Co-Op at Hanon Systems and enjoys playing the piano.",
-    email: 'andreysh@umich.edu',
-    linkedin: '',
+    description: "Our President, Thomas Hobbs, is a graduate Mechanical Engineer who joined the team in the fall of 2023. Initially, Thomas contributed to the airframe team, where he played a key role in developing the team's airbrake system and gained valuable experience in design and simulation. Now, as President, he oversees the Treasurer, Electrical Captain, and Mechanical Captain, guiding the team as they prepare for the 2025 IREC competition.",
+    email: 'thobbs@umich.edu',
+    linkedin: 'https://www.linkedin.com/in/thomas-hobbs-589867279/',
     url: '/aboutus/leadership-team'
   },
   {
-    name: "Bruna",
-    organization: "Mechanical Lead",
-    description: "Bruna is currently a second year studying Mechanical Engineering. This is her second year on the team, and first year leading the mechanical team. Bruna has joined in 2021 and started off as a recovery member. She is part of a neuroscience research lab on campus and is on the society of women engineers E-board.",
-    email: 'brunaosk@umich.edu',
-    linkedin: 'https://www.linkedin.com/in/bruna-osako-rocha-1858b2221/',
+    name: "Maksym",
+    organization: "Mechanical Captain",
+    description: "Our Mechanical Captain is Maksym Rozhko. He is a senior studying Mechanical Engineering and ever since joining the team in 2022, he has taken on a variety of roles from designing and simulating the rockets airframe to manufacturing composite carbon fiber airfoil fins. Now, as Mechanical Captain, Maksym oversees all mechanical systems that ensure the rocket’s success, working closely with three sub-teams: Airframe, Payload, and Recovery. He manages tasks, coordinates design reviews, and ensures that real-world engineering principles are applied to every aspect of the rocket’s development. Under Maksym’s leadership, the team is continuously pushed to innovate, collaborate, and launch a rocket that achieves its target altitude of 10,000 feet.",
+    email: 'rozhkom@umich.edu',
+    linkedin: 'https://www.linkedin.com/in/maksym-rozhko2002',
     url: '/aboutus/mechanical-team'
   },
   {
-    name: "Mohamed",
-    organization: "Electircal Lead",
-    description: "Mohamed is currently a 4th year studying Electrical and Computer Engineering. This is his second year on the team and first year leading the electrical team. Mohamed joined the team in 2022 and started as an electrical payload member. He has completed an Electrical Engineering internship at Dürr Systems, as well as an internship at Roush as an Engineering intern.",
-    email: 'Melabdal@umich.edu',
-    linkedin: 'https://www.linkedin.com/in/mohamedelabdallah/',
+    name: "Alex",
+    organization: "Electircal Captain",
+    description: "Our Electrical Captain is Alex Sufaj. He's a fourth year computer engineer that joined the team in the winter of '22 after transferring from Oakland Community College. From circuit board design to front end development, Alex oversees all the electrical systems inside and outside of the rocket. These responsibilities are split between the three subteams: hardware, avionics, and software. Alex works with the subteams to coordinate and guide them towards a common goal by teaching real-world engineering skills and problem solving.",
+    email: 'asufaj@umich.edu',
+    linkedin: ' ',
     url: '/aboutus/electrical-team'
   },
   {
-    name: "Perla",
+    name: "Natalia ",
     organization: "Project Manager",
-    description: "Perla is a first year Master's student studying Bioengineering. This is her third year on the year and her second year as Project Manager. Perla started off working on the scientific experiment on the payload, given her undergraduate degree in Biology. She is also involved in a Cellular and Molecular Bioengineering Research Lab on campus.",
-    email: 'pfares@umich.edu',
-    linkedin: 'https://www.linkedin.com/in/perlafares',
+    description: "The current season's Project Manager is Natalia Stockwell, a Sophomore in Human-Centered Engineering Design. In the 2023-24 season, she worked in the Recovery team. The Project Manager deals with finances, communication, sponsorships, and overall planning for the team throughout the year.",
+    email: 'natalist@umich.edu',
+    linkedin: ' ',
     url: '/aboutus/project-management-team'
   }
 ]

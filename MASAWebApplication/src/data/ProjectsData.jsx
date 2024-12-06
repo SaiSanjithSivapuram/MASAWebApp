@@ -1,5 +1,10 @@
 export const ProjectsData = [
     {
+        name: "Project VULCAN",
+        date: "2024 - 2025",
+        url: '/comingSoon'
+    },
+    {
         name: "Project S.H.A.G.E.E",
         date: "2023 - 2024",
         url: '/comingSoon'

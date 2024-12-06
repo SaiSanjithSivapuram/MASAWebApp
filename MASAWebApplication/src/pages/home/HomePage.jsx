@@ -316,13 +316,16 @@ function HomePage() {
                       <img src='Blue-Origin.png' width={"50%"} height={"90%"} />
                     </Grid>
                     <Grid md={4} lg={4} justifyContent="center" sx={{ display: { xs: "none", md: "block flex", lg: "block flex" }, paddingTop: "20px" }}>
-                      <img src='ford.png' width={"50%"} height={"90%"} />
-                    </Grid>
-                    <Grid md={4} lg={4} justifyContent="center" sx={{ display: { xs: "none", md: "block flex", lg: "block flex" }, paddingTop: "20px" }}>
                       <img src='Magna.png' width={"60%"} height={"90%"} />
                     </Grid>
                     <Grid md={4} lg={4} justifyContent="center" sx={{ display: { xs: "none", md: "block flex", lg: "block flex" }, paddingTop: "20px" }}>
-                      <Typography variant='p' className='sponsor-title'  >The Roussey Family</Typography>
+                      <img src='TripleInc.png' width={"60%"} height={"90%"} />
+                    </Grid>
+                    <Grid md={4} lg={4} justifyContent="center" sx={{ display: { xs: "none", md: "block flex", lg: "block flex" }, paddingTop: "20px" }}>
+                      <img src='LormaxStern.png' width={"60%"} height={"90%"} />
+                    </Grid>
+                    <Grid md={4} lg={4} justifyContent="center" sx={{ display: { xs: "none", md: "block flex", lg: "block flex" }, paddingTop: "20px" }}>
+                      <img src='DassaultSystemes.png' width={"60%"} height={"90%"} />
                     </Grid>
 
                     <Grid xs={12} justifyContent="center" sx={{ display: { xs: "block flex", md: "none", lg: "none" }, paddingTop: { xs: "10px" } }}>
@@ -334,14 +337,17 @@ function HomePage() {
                     <Grid xs={12} justifyContent="center" sx={{ display: { xs: "block flex", md: "none", lg: "none" }, paddingTop: { xs: "40px" } }}>
                       <img src='Blue-Origin.png' width={"30%"} height={"90%"} />
                     </Grid>
-                    <Grid xs={12} justifyContent="center" sx={{ display: { xs: "block flex", md: "none", lg: "none" }, paddingTop: { xs: "50px" } }}>
-                      <img src='ford.png' width={"30%"} height={"90%"} />
-                    </Grid>
                     <Grid xs={12} justifyContent="center" sx={{ display: { xs: "block flex", md: "none", lg: "none" }, paddingTop: { xs: "0px" } }}>
                       <img src='Magna.png' width={"50%"} height={"90%"} />
                     </Grid>
                     <Grid xs={12} justifyContent="center" sx={{ display: { xs: "block flex", md: "none", lg: "none" }, paddingTop: { xs: "10px" } }}>
-                      <Typography variant='p' className='sponsor-title'  >The Roussey Family</Typography>
+                      <img src='TripleInc.png' width={"40%"} height={"90%"} />
+                    </Grid>
+                    <Grid xs={12} justifyContent="center" sx={{ display: { xs: "block flex", md: "none", lg: "none" }, paddingTop: { xs: "20px" } }}>
+                      <img src='LormaxStern.png' width={"40%"} height={"90%"} />
+                    </Grid>
+                    <Grid xs={12} justifyContent="center" sx={{ display: { xs: "block flex", md: "none", lg: "none" }, paddingTop: { xs: "30px" } }}>
+                      <img src='DassaultSystemes.png' width={"40%"} height={"90%"} />
                     </Grid>
                   </Grid>
                 </CardContent>
@@ -363,7 +369,7 @@ function HomePage() {
                         whileInView="visible"
                         viewport={{ once: true }}
                       >
-                        PROJECT SHAGEE UP IN</Typography>
+                        PROJECT VULCAN UP IN</Typography>
                     </Grid>
                   </Grid>
                 } />
@@ -386,7 +392,7 @@ function HomePage() {
                           whileInView="visible"
                           viewport={{ once: true }}
                         >
-                          KNOW MORE ABOUT SHAGEE</Typography>
+                          KNOW MORE ABOUT VULCAN</Typography>
                       </Button>
                     </Grid>
                   </Grid>
